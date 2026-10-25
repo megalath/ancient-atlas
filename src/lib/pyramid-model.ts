@@ -152,6 +152,10 @@ export type BuiltFeature = {
   material: MaterialId;
   evidence: Evidence;
   scene: SceneId;
+  /** Feature this one sits inside, used for breadcrumbs. */
+  parent?: string;
+  /** Where a sub-scene is drawn on the parent terrain, metres east and north. */
+  anchor?: { x: number; z: number };
   summary: string;
   description: string;
   links: AtlasLink[];

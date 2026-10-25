@@ -26,6 +26,16 @@
           "accuracy": { "enum": ["surveyed", "reconstructed", "projected", "schematic"] },
           "evidence": { "enum": ["verified", "testimony", "estimated"] },
           "scene": { "enum": ["monument", "terrain", "sport-model"] },
+          "parent": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "anchor": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["x", "z"],
+            "properties": {
+              "x": { "type": "number" },
+              "z": { "type": "number" }
+            }
+          },
           "schematic": { "type": "boolean" },
           "material": {
             "enum": ["casing", "core", "passage", "granite", "bedrock", "shaft", "void", "forced", "chevron", "sand", "asphalt", "water", "metal", "reactor"]

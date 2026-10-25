@@ -36,6 +36,7 @@ export type AtlasSite = {
   category: "ancient" | "modern-mysteries";
   wikipedia?: string;
   catalogIssue: number | null;
+  entryFeature?: string;
   latitude: number;
   longitude: number;
   model: SceneModel;
@@ -51,6 +52,7 @@ type PackageSite = {
   category?: "ancient" | "modern-mysteries";
   wikipedia?: string;
   catalogIssue?: number | null;
+  entryFeature?: string;
   terrain?: TerrainGrid;
 };
 
@@ -78,6 +80,7 @@ function khufuSite(): AtlasSite {
     category: site?.category ?? "ancient",
     wikipedia: site?.wikipedia,
     catalogIssue: site?.catalogIssue ?? null,
+    entryFeature: site?.entryFeature,
     latitude: model.site.latitude,
     longitude: model.site.longitude,
     model,
@@ -99,6 +102,7 @@ export function loadAtlas(): AtlasSite[] {
       category: site.category ?? "ancient",
       wikipedia: generic.wikipedia,
       catalogIssue: generic.catalogIssue,
+      entryFeature: site.entryFeature,
       latitude: generic.site.latitude,
       longitude: generic.site.longitude,
       model: generic,

@@ -13,6 +13,7 @@ JSON Schema for the three files lives in `schema/`. `npm run validate` checks th
 | `name` | yes | Name shown on the globe and in the heading |
 | `builder` | yes | `generic` for a site whose shapes are in `features.json`. `landscape` for terrain, runways, and a separate craft scene. `khufu` is reserved for the Great Pyramid survey reduction |
 | `category` | no | `ancient` (the default) or `modern-mysteries`. The globe can filter on it |
+| `entryFeature` | no | Feature id framed when the globe flies down into the site. Every package still gets a marker, a search entry, and a fly-to from its `location` |
 | `catalogIssue` | yes | GitHub issue number for this monument, or `null` for Khufu only |
 | `wikipedia` | no | URL of the article |
 | `location.latitude`, `location.longitude` | generic sites | WGS84 decimal degrees. `0,0` is rejected |
@@ -59,6 +60,8 @@ One object per named part:
 | `layer` | `casing`, `core`, `interior`, or a landscape layer: `terrain`, `airfield`, `buildings`, `boundary`, `s4`, `hull`, `craft-interior` |
 | `evidence` | `verified`, `testimony`, or `estimated`. Omitted means `verified`. A testimony or estimated feature cannot carry a verified fact. A verified fact cannot cite a testimony source. An estimated fact must say it is estimated |
 | `scene` | `monument`, `terrain`, or `sport-model`. `sport-model` opens the craft cutaway instead of the landscape |
+| `parent` | Optional feature id this part sits inside. The breadcrumb walks the chain back to the site and the globe |
+| `anchor` | Optional `{ "x", "z" }` in metres east and north. A feature with another `scene` is drawn at that point on the terrain, so it can be tapped there |
 | `accuracy` | `surveyed`, `reconstructed`, `projected`, or `schematic` |
 | `schematic` | `true` when a drawn number is not a published measurement |
 | `material` | `casing`, `core`, `passage`, `granite`, `bedrock`, `shaft`, `void`, `forced`, or `chevron` |

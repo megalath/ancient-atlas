@@ -22,6 +22,8 @@ type GenericFeature = {
   material: MaterialId;
   evidence?: Evidence;
   scene?: SceneId;
+  parent?: string;
+  anchor?: { x: number; z: number };
   description: string;
   links?: BuiltFeature["links"];
   facts?: BuiltFeature["facts"];
@@ -36,6 +38,7 @@ export type GenericPackage = {
     builder?: string;
     wikipedia?: string;
     catalogIssue?: number | null;
+    entryFeature?: string;
     location?: { latitude: number; longitude: number };
     orientation?: { westOfNorthArcsec: number };
   };
@@ -82,6 +85,8 @@ export function buildGenericModel(pack: GenericPackage): SceneModel & {
       material: feature.material,
       evidence: feature.evidence ?? "verified",
       scene: feature.scene ?? "monument",
+      parent: feature.parent,
+      anchor: feature.anchor,
       summary: feature.description,
       description: feature.description,
       links: feature.links ?? [],

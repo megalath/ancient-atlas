@@ -22,6 +22,7 @@ export function GlobeView({
   flyToken,
   mobile,
   onEnter,
+  onArrived,
 }: {
   sites: GlobeSite[];
   latitude: number;
@@ -29,6 +30,7 @@ export function GlobeView({
   flyToken: number;
   mobile: boolean;
   onEnter: (id: string) => void;
+  onArrived?: () => void;
 }) {
   const home = latLonToVector(16, 10, RADIUS * 2.75);
   return (
@@ -47,7 +49,7 @@ export function GlobeView({
       {sites.map((site) => (
         <SiteMarker key={site.id} site={site} onEnter={onEnter} />
       ))}
-      <FlyTo latitude={latitude} longitude={longitude} token={flyToken} />
+      <FlyTo latitude={latitude} longitude={longitude} token={flyToken} onArrived={onArrived} />
       <OrbitControls
         makeDefault
         enableDamping
@@ -104,7 +106,17 @@ function SiteMarker({ site, onEnter }: { site: GlobeSite; onEnter: (id: string) 
   );
 }
 
-function FlyTo({ latitude, longitude, token }: { latitude: number; longitude: number; token: number }) {
+function FlyTo({
+  latitude,
+  longitude,
+  token,
+  onArrived,
+}: {
+  latitude: number;
+  longitude: number;
+  token: number;
+  onArrived?: () => void;
+}) {
   const { camera } = useThree();
   const controls = useThree((state) => state.controls) as { target: Vector3 } | null;
   const marker = useMemo(() => {
@@ -113,14 +125,20 @@ function FlyTo({ latitude, longitude, token }: { latitude: number; longitude: nu
   }, [latitude, longitude]);
   const goal = useMemo(() => marker.clone().normalize().multiplyScalar(RADIUS * 1.09), [marker]);
   const flying = useRef(false);
+  const started = useRef(0);
 
   useEffect(() => {
-    if (token > 0) flying.current = true;
-  }, [token]);
+    if (token <= 0) return;
+    flying.current = true;
+    started.current = performance.now();
+    const orbit = controls as { enabled?: boolean } | null;
+    if (orbit) orbit.enabled = false;
+  }, [token, controls]);
 
   useEffect(() => {
     const start = () => {
       flying.current = true;
+      started.current = performance.now();
     };
     window.addEventListener("atlas-fly", start);
     return () => window.removeEventListener("atlas-fly", start);
@@ -128,10 +146,18 @@ function FlyTo({ latitude, longitude, token }: { latitude: number; longitude: nu
 
   useFrame((_, delta) => {
     if (!flying.current) return;
-    const step = 1 - Math.exp(-1.5 * delta);
+    const orbit = controls as { enabled?: boolean } | null;
+    if (orbit) orbit.enabled = false;
+    const step = 1 - Math.exp(-1.8 * delta);
     camera.position.lerp(goal, step);
     controls?.target.lerp(marker, step);
-    if (camera.position.distanceTo(goal) < RADIUS * 0.012) flying.current = false;
+    const arrived = camera.position.distanceTo(goal) < RADIUS * 0.04 || performance.now() - started.current > 2800;
+    if (!arrived) return;
+    flying.current = false;
+    camera.position.copy(goal);
+    controls?.target.copy(marker);
+    if (orbit) orbit.enabled = true;
+    onArrived?.();
   });
 
   return null;

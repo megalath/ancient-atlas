@@ -267,6 +267,29 @@ for (const id of ids) {
       fail(`${where}: Khufu geometry is computed by the builder. Set geometry.providedBy to "builder".`);
     }
   }
+  if (site.entryFeature && !seenFeatures.has(site.entryFeature)) {
+    fail(`${id}: entryFeature ${site.entryFeature} is not a feature in this package`);
+  }
+  const featureById = new Map((featuresFile.features ?? []).map((feature) => [feature.id, feature]));
+  for (const feature of featuresFile.features ?? []) {
+    if (!feature.parent && !feature.anchor) continue;
+    if (feature.parent && !seenFeatures.has(feature.parent)) {
+      fail(`${id}/${feature.id}: parent ${feature.parent} is not a feature in this package`);
+    }
+    const chain = new Set();
+    let cursor = feature;
+    while (cursor?.parent) {
+      if (chain.has(cursor.id)) {
+        fail(`${id}/${feature.id}: parent chain cycles`);
+        break;
+      }
+      chain.add(cursor.id);
+      cursor = featureById.get(cursor.parent);
+    }
+    if (feature.anchor && (!Number.isFinite(feature.anchor.x) || !Number.isFinite(feature.anchor.z))) {
+      fail(`${id}/${feature.id}: anchor needs finite east and north metres`);
+    }
+  }
 }
 
 await Promise.all(issueChecks);

@@ -5,6 +5,7 @@ import { GlobeView } from "@/components/GlobeView";
 import { LandscapeView } from "@/components/LandscapeView";
 import { PyramidView, type LayerState } from "@/components/PyramidView";
 import { loadAtlas, siteById, type AtlasSite, type AtlasSource } from "@/lib/atlas";
+import { featureBounds } from "@/lib/bounds";
 import { groundPosition, standPosition } from "@/lib/stand";
 import {
   dataset,
@@ -72,9 +73,9 @@ const PRESETS: Record<string, LayerState> = {
 type Sheet = "layers" | "features" | "info";
 
 function readQuery() {
-  if (typeof window === "undefined") return { site: null as string | null, feature: null as string | null };
+  if (typeof window === "undefined") return { site: null as string | null, feature: null as string | null, view: null as string | null };
   const params = new URLSearchParams(window.location.search);
-  return { site: params.get("site"), feature: params.get("feature") };
+  return { site: params.get("site"), feature: params.get("feature"), view: params.get("view") };
 }
 
 function useCompact() {
@@ -102,10 +103,11 @@ export default function AtlasApp() {
   );
   const site = siteById(sites, siteId);
   const model = site.model;
-  const [view, setView] = useState<"globe" | "pyramid">("pyramid");
+  const [view, setView] = useState<"globe" | "pyramid">(initial.view === "globe" && !initial.feature ? "globe" : "pyramid");
   const [preset, setPreset] = useState<string>("cutaway");
   const [layers, setLayers] = useState<LayerState>(PRESETS.cutaway);
   const [query, setQuery] = useState("");
+  const [siteQuery, setSiteQuery] = useState("");
   const [selectedId, setSelectedId] = useState<string | null>(initial.feature ?? "grand-gallery");
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [mode, setMode] = useState<"orbit" | "walk">("orbit");
@@ -117,6 +119,12 @@ export default function AtlasApp() {
   const [sheet, setSheet] = useState<Sheet | null>(null);
   const stick = useRef({ x: 0, y: 0 });
   const restored = useRef(false);
+  const pendingEnter = useRef<string | null>(null);
+  const siteMatches = sites.filter((item) => {
+    const needle = siteQuery.trim().toLowerCase();
+    if (!needle) return true;
+    return item.name.toLowerCase().includes(needle) || item.id.includes(needle) || item.category.replace("-", " ").includes(needle);
+  });
 
   useEffect(() => {
     for (const node of document.querySelectorAll(".sheet, .rail.right .rail-scroll")) {
@@ -181,7 +189,48 @@ export default function AtlasApp() {
     const url = new URL(window.location.href);
     url.searchParams.set("site", nextSite);
     url.searchParams.set("feature", featureId);
+    url.searchParams.delete("view");
     window.history.replaceState(null, "", `${url.pathname}?${url.searchParams.toString()}`);
+  }
+
+  function enterSite(id: string) {
+    const next = siteById(sites, id);
+    const entryId =
+      next.entryFeature && next.features.some((item) => item.id === next.entryFeature) ? next.entryFeature : (next.features[0]?.id ?? null);
+    setSiteId(next.id);
+    setView("pyramid");
+    setSelectedId(entryId);
+    setMode("orbit");
+    setFocusToken((value) => value + 1);
+    if (entryId) writeUrl(next.id, entryId);
+    if (compact) setSheet("info");
+  }
+
+  function beginFly(id: string) {
+    const next = siteById(sites, id);
+    pendingEnter.current = next.id;
+    setCategory("all");
+    setSiteId(next.id);
+    setView("globe");
+    setFlyToken((value) => value + 1);
+    window.dispatchEvent(new Event("atlas-fly"));
+  }
+
+  function onFlyArrived() {
+    const id = pendingEnter.current;
+    if (!id) return;
+    pendingEnter.current = null;
+    enterSite(id);
+  }
+
+  function followCrumb(key: string, featureId: string | null) {
+    if (key === "globe") {
+      pendingEnter.current = null;
+      setMode("orbit");
+      setView("globe");
+      return;
+    }
+    if (featureId) focusFeature(featureId);
   }
 
   function focusFeature(id: string) {
@@ -207,14 +256,17 @@ export default function AtlasApp() {
   }
 
   function walkOnGround() {
-    if (site.builder === "landscape") {
-      setMode("orbit");
-      return;
-    }
     setView("pyramid");
     setMode("walk");
     setCollide(true);
-    setStandAt(groundPosition(model.baseM));
+    if (site.builder === "landscape") {
+      const feature = site.features.find((item) => item.id === selectedId);
+      if (feature?.anchor) setStandAt({ x: feature.anchor.x, y: 1.7, z: feature.anchor.z });
+      else if (feature) setStandAt(featureBounds(feature).center);
+      else setStandAt({ x: 0, y: 1.7, z: 0 });
+    } else {
+      setStandAt(groundPosition(model.baseM));
+    }
     setStandToken((value) => value + 1);
     window.dispatchEvent(new Event("atlas-lock"));
     if (compact) setSheet(null);
@@ -230,15 +282,6 @@ export default function AtlasApp() {
     setSelectedId(feature.id);
     writeUrl(site.id, feature.id);
     if (compact) setSheet(null);
-  }
-
-  function openSite(id: string) {
-    const next = siteById(sites, id);
-    setSiteId(next.id);
-    setView("pyramid");
-    setSelectedId(next.features[0]?.id ?? null);
-    setFocusToken(0);
-    setMode("orbit");
   }
 
   const featureList = (
@@ -267,13 +310,14 @@ export default function AtlasApp() {
       }}
       sites={visibleSites}
       siteId={site.id}
-      onSite={openSite}
+      onSite={view === "globe" ? beginFly : enterSite}
       category={category}
       onCategory={setCategory}
       landscape={site.builder === "landscape"}
       craft={selected?.scene === "sport-model"}
     />
   );
+  const crumbItems = locationCrumbs(site, selected, view);
   const panel = selected ? (
     <FeatureCard feature={selected} sources={site.sources} khufu={site.id === "khufu"} onStand={() => standIn(selected)} />
   ) : (
@@ -292,6 +336,52 @@ export default function AtlasApp() {
         </aside>
       )}
       <main className="stage">
+        <nav className="crumbs" aria-label="Location">
+          {crumbItems.map((item, index) => {
+            const label = item.key === "globe" && view !== "globe" ? "Back to globe" : item.label;
+            const current = index === crumbItems.length - 1;
+            return (
+              <span key={item.key} className="crumb">
+                {index > 0 ? <span aria-hidden="true">/</span> : null}
+                {current ? (
+                  <span aria-current="page">{label}</span>
+                ) : (
+                  <button type="button" onClick={() => followCrumb(item.key, item.featureId)}>
+                    {label}
+                  </button>
+                )}
+              </span>
+            );
+          })}
+        </nav>
+        {view === "globe" ? (
+          <form
+            className="site-jump"
+            role="search"
+            onSubmit={(event) => {
+              event.preventDefault();
+              if (siteMatches[0]) beginFly(siteMatches[0].id);
+            }}
+          >
+            <label htmlFor="site-search">Search sites</label>
+            <input
+              id="site-search"
+              value={siteQuery}
+              onChange={(event) => setSiteQuery(event.target.value)}
+              placeholder="Search every site"
+              autoComplete="off"
+            />
+            <ul>
+              {siteMatches.map((item) => (
+                <li key={item.id}>
+                  <button type="button" onClick={() => beginFly(item.id)}>
+                    {item.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </form>
+        ) : null}
         {view === "globe" ? (
           <GlobeView
             sites={visibleSites.map((item) => ({
@@ -304,7 +394,8 @@ export default function AtlasApp() {
             longitude={site.longitude}
             flyToken={flyToken}
             mobile={compact}
-            onEnter={openSite}
+            onEnter={beginFly}
+            onArrived={onFlyArrived}
           />
         ) : site.builder === "landscape" ? (
           <LandscapeView
@@ -315,6 +406,10 @@ export default function AtlasApp() {
             onHover={setHoveredId}
             focusToken={focusToken}
             mobile={compact}
+            mode={mode}
+            stick={stick}
+            standToken={standToken}
+            standAt={standAt}
           />
         ) : (
           <PyramidView
@@ -367,17 +462,15 @@ export default function AtlasApp() {
             <button type="button" aria-pressed={sheet === "info"} onClick={() => setSheet(sheet === "info" ? null : "info")}>
               Info
             </button>
-            {site.builder === "landscape" ? null : (
-              <button type="button" aria-pressed={mode === "walk"} onClick={() => (mode === "walk" ? setMode("orbit") : walkOnGround())}>
-                {mode === "walk" ? "Orbit" : "Walk"}
-              </button>
-            )}
+            <button type="button" aria-pressed={mode === "walk"} onClick={() => (mode === "walk" ? setMode("orbit") : walkOnGround())}>
+              {mode === "walk" ? "Orbit" : "Walk"}
+            </button>
           </nav>
         ) : (
           <div className="hud">
             <p>
               {view === "globe"
-                ? "Drag to orbit the Earth. Pinch or scroll to zoom. A marker opens that monument."
+                ? "Drag to spin the Earth from site to site. Search, or tap a marker, to fly down."
                 : mode === "walk"
                   ? "Click the view to look. WASD walks, Shift hurries, Esc releases the mouse. On a phone, drag to look, use the joystick, or tap the ground."
                   : "Drag to orbit. Pinch to zoom, two fingers to pan. Click a feature for its description, pictures, and sources."}
@@ -399,6 +492,26 @@ export default function AtlasApp() {
       )}
     </div>
   );
+}
+
+function locationCrumbs(site: AtlasSite, selected: BuiltFeature | null, view: "globe" | "pyramid") {
+  const items: { key: string; label: string; featureId: string | null }[] = [{ key: "globe", label: "Globe", featureId: null }];
+  if (view === "globe") return items;
+  const entry = site.entryFeature && site.features.some((item) => item.id === site.entryFeature) ? site.entryFeature : (site.features[0]?.id ?? null);
+  items.push({ key: "site", label: site.name, featureId: entry });
+  if (!selected) return items;
+  const chain: BuiltFeature[] = [];
+  const guard = new Set<string>();
+  let current: BuiltFeature | undefined = selected;
+  while (current && !guard.has(current.id)) {
+    guard.add(current.id);
+    chain.push(current);
+    const parentId: string | undefined = current.parent;
+    current = parentId ? site.features.find((item) => item.id === parentId) : undefined;
+  }
+  chain.reverse();
+  for (const feature of chain) items.push({ key: feature.id, label: feature.name, featureId: feature.id });
+  return items;
 }
 
 function Brand({ site }: { site: AtlasSite }) {
@@ -567,16 +680,14 @@ function LayerControls({
               <label htmlFor="layer-section">{landscape ? "Cutaway" : "Section plane"}</label>
             </li>
           </ul>
-          {landscape ? null : (
-            <div className="tools">
-              <button type="button" className="tool" aria-pressed={mode === "orbit"} onClick={onOrbit}>
-                Orbit
-              </button>
-              <button type="button" className="tool" aria-pressed={mode === "walk"} onClick={onWalk}>
-                Walk the ground
-              </button>
-            </div>
-          )}
+          <div className="tools">
+            <button type="button" className="tool" aria-pressed={mode === "orbit"} onClick={onOrbit}>
+              Orbit
+            </button>
+            <button type="button" className="tool" aria-pressed={mode === "walk"} onClick={onWalk}>
+              Walk the ground
+            </button>
+          </div>
         </>
       )}
     </>

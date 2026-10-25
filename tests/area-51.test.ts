@@ -93,6 +93,19 @@ describe("evidence labels", () => {
     }
   });
 
+  it("anchors the Sport Model on the S-4 bays", () => {
+    const craft = feature("sport-model");
+    const hangars = feature("s4-hangars");
+    expect(craft.parent).toBe("s4-hangars");
+    expect(feature("reactor").parent).toBe("sport-model");
+    expect(siteFile.entryFeature).toBe("groom-lake");
+    const middle = hangars.geometry[4];
+    if (middle.kind !== "aabb" || !craft.anchor) throw new Error("expected the middle bay and an anchor");
+    const doorX = (middle.min.x + middle.max.x) / 2;
+    const doorZ = (middle.min.z + middle.max.z) / 2;
+    expect(Math.hypot(craft.anchor.x - doorX, craft.anchor.z - doorZ)).toBeLessThan(40);
+  });
+
   it("keeps the pyramid record verified", () => {
     for (const item of getPyramidModel().features) {
       expect(item.evidence).toBe("verified");

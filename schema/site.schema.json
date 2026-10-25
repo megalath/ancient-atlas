@@ -13,6 +13,7 @@
     "category": { "enum": ["ancient", "modern-mysteries"] },
     "wikipedia": { "type": "string" },
     "catalogIssue": { "type": ["integer", "null"], "minimum": 1 },
+    "entryFeature": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
     "location": {
       "type": "object",
       "additionalProperties": false,

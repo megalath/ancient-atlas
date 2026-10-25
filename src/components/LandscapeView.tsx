@@ -1,18 +1,20 @@
 "use client";
 
 import { Html, Line, OrbitControls, useTexture } from "@react-three/drei";
-import { Canvas, useThree } from "@react-three/fiber";
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Suspense, useEffect, useMemo, useRef, useState, type MutableRefObject } from "react";
 import {
   BufferAttribute,
   BufferGeometry,
   DoubleSide,
   Plane,
   Quaternion,
+  Raycaster,
   Shape,
   ShapeGeometry,
   SRGBColorSpace,
   TOUCH,
+  Vector2,
   Vector3,
 } from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
@@ -31,6 +33,8 @@ const COLORS: Record<string, string> = {
   bedrock: "#8d7b66",
 };
 
+type Stick = { x: number; y: number };
+
 type Props = {
   site: AtlasSite;
   layers: LayerState;
@@ -39,9 +43,14 @@ type Props = {
   onHover: (id: string | null) => void;
   focusToken: number;
   mobile: boolean;
+  mode: "orbit" | "walk";
+  stick: MutableRefObject<Stick>;
+  standToken: number;
+  standAt: Vec3 | null;
 };
 
 export function LandscapeView(props: Props) {
+  const heights = useHeights(props.site.terrain?.heights);
   const craft = props.site.features.some(
     (feature) => feature.id === props.selectedId && feature.scene === "sport-model",
   );
@@ -51,7 +60,7 @@ export function LandscapeView(props: Props) {
       camera={{
         position: craft ? [8, 7.4, 20] : [1800, 5200, 2600],
         fov: craft ? 42 : 46,
-        near: craft ? 0.04 : 2,
+        near: craft ? 0.04 : 0.4,
         far: craft ? 200 : 80000,
       }}
       gl={{
@@ -68,17 +77,20 @@ export function LandscapeView(props: Props) {
       <ambientLight intensity={craft ? 0.7 : 0.85} />
       <directionalLight position={[4000, 6000, 2000]} intensity={1.35} />
       <Suspense fallback={null}>
-        {craft ? <CraftScene {...props} /> : <TerrainScene {...props} />}
+        {craft ? <CraftScene {...props} /> : <TerrainScene {...props} heights={heights} />}
       </Suspense>
       <OrbitControls
         makeDefault
+        enabled={props.mode !== "walk"}
         enableDamping
+        enablePan
         dampingFactor={0.08}
         maxPolarAngle={craft ? Math.PI : Math.PI / 2.05}
-        minDistance={craft ? 3 : 40}
+        minDistance={craft ? 2 : 8}
         maxDistance={craft ? 40 : 40000}
         touches={{ ONE: TOUCH.ROTATE, TWO: TOUCH.DOLLY_PAN }}
       />
+      <GroundWalk {...props} heights={heights} craft={craft} />
     </Canvas>
   );
 }
@@ -103,9 +115,8 @@ function useHeights(url: string | undefined) {
   return heights;
 }
 
-function TerrainScene(props: Props) {
+function TerrainScene({ heights, ...props }: Props & { heights: Int16Array | null }) {
   const terrain = props.site.terrain;
-  const heights = useHeights(terrain?.heights);
   const controls = useThree((state) => state.controls) as OrbitControlsImpl | null;
   const camera = useThree((state) => state.camera);
   const origin = { lat: props.site.latitude, lon: props.site.longitude };
@@ -114,6 +125,7 @@ function TerrainScene(props: Props) {
   );
 
   useEffect(() => {
+    if (props.mode === "walk") return;
     const feature = props.site.features.find((item) => item.id === props.selectedId && item.scene === "terrain");
     if (!feature || !props.focusToken) return;
     const bounds = featureBounds(feature);
@@ -126,11 +138,22 @@ function TerrainScene(props: Props) {
     camera.position.copy(next);
     controls?.target.set(bounds.center.x, Math.max(bounds.center.y, 20), bounds.center.z);
     controls?.update();
-  }, [props.focusToken, props.selectedId, props.site.features, camera, controls]);
+  }, [props.focusToken, props.mode, props.selectedId, props.site.features, camera, controls]);
 
+  const anchors = props.site.features.filter((feature) => feature.anchor && props.layers.interior);
   return (
     <>
       {terrain && heights ? <TerrainMesh site={props.site} heights={heights} /> : null}
+      {anchors.map((feature) => (
+        <SceneAnchor
+          key={feature.id}
+          feature={feature}
+          selected={feature.id === props.selectedId}
+          ground={(x, z) => (terrain && heights ? sampleGround(terrain, heights, origin, x, z) : 40)}
+          onSelect={props.onSelect}
+          onHover={props.onHover}
+        />
+      ))}
       {shown.map((feature) => (
         <FeatureMeshes
           key={feature.id}
@@ -156,6 +179,7 @@ function CraftScene(props: Props) {
   const clipPlanes = useMemo(() => [new Plane(new Vector3(0, 0, -1), 0.35)], []);
 
   useEffect(() => {
+    if (props.mode === "walk") return;
     const feature = props.site.features.find((item) => item.id === props.selectedId && item.scene === "sport-model");
     if (!feature || !props.focusToken) return;
     const bounds = featureBounds(feature);
@@ -166,11 +190,11 @@ function CraftScene(props: Props) {
     camera.position.set(target.x + distance * 0.42, target.y + distance * 0.36, target.z + distance);
     controls?.target.set(target.x, target.y, target.z);
     controls?.update();
-  }, [props.focusToken, props.selectedId, props.site.features, camera, controls]);
+  }, [props.focusToken, props.mode, props.selectedId, props.site.features, camera, controls]);
 
   return (
     <>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, 0]}>
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, 0]} userData={{ ground: true }}>
         <circleGeometry args={[8, 48]} />
         <meshStandardMaterial color="#2a3038" roughness={1} />
       </mesh>
@@ -266,7 +290,7 @@ function TerrainMesh({ site, heights }: { site: AtlasSite; heights: Int16Array }
   }, [heights, site.latitude, site.longitude, terrain]);
 
   return (
-    <mesh geometry={geometry} raycast={() => null}>
+    <mesh geometry={geometry} userData={{ ground: true }}>
       <meshStandardMaterial map={texture} roughness={1} metalness={0} side={DoubleSide} />
     </mesh>
   );
@@ -393,6 +417,7 @@ function ShapeMesh({
         position={[(from.x + to.x) / 2, yLift + 0.6, (from.z + to.z) / 2]}
         quaternion={quaternion}
         raycast={raycast}
+        userData={{ pick: true }}
         {...handlers}
       >
         <boxGeometry args={[shape.width, 1.2, length]} />
@@ -410,6 +435,7 @@ function ShapeMesh({
       <mesh
         position={[(shape.min.x + shape.max.x) / 2, yLift + (shape.min.y + shape.max.y) / 2, (shape.min.z + shape.max.z) / 2]}
         raycast={raycast}
+        userData={{ pick: true }}
         {...handlers}
       >
         <boxGeometry args={[size.x, size.y, size.z]} />
@@ -419,7 +445,7 @@ function ShapeMesh({
   }
   if (shape.kind === "cylinder") {
     return (
-      <mesh position={[shape.x ?? 0, (shape.y ?? 0) + shape.height / 2, shape.z ?? 0]} raycast={raycast} {...handlers}>
+      <mesh position={[shape.x ?? 0, (shape.y ?? 0) + shape.height / 2, shape.z ?? 0]} raycast={raycast} userData={{ pick: true }} {...handlers}>
         <cylinderGeometry args={[shape.radius, shape.radius, shape.height, 28]} />
         {material}
       </mesh>
@@ -428,7 +454,7 @@ function ShapeMesh({
   if (shape.kind === "disc") {
     const scaleY = shape.height / (shape.radius * 2);
     return (
-      <mesh position={[0, shape.height / 2, 0]} scale={[1, scaleY, 1]} raycast={raycast} {...handlers}>
+      <mesh position={[0, shape.height / 2, 0]} scale={[1, scaleY, 1]} raycast={raycast} userData={{ pick: true }} {...handlers}>
         <sphereGeometry args={[shape.radius, 48, 32]} />
         {material}
       </mesh>
@@ -446,12 +472,229 @@ function ShapeMesh({
     loop.push(loop[0]);
     return (
       <group>
-        <mesh geometry={fill} position={[0, yLift + 3, 0]} rotation={[Math.PI / 2, 0, 0]} raycast={raycast} {...handlers}>
+        <mesh geometry={fill} position={[0, yLift + 3, 0]} rotation={[Math.PI / 2, 0, 0]} raycast={raycast} userData={{ pick: true }} {...handlers}>
           <meshStandardMaterial color={color} transparent opacity={0.12} depthWrite={false} side={DoubleSide} />
         </mesh>
         <Line points={loop} color={selected ? "#f0d48a" : "#f4efe4"} />
       </group>
     );
   }
+  return null;
+}
+
+function SceneAnchor({
+  feature,
+  selected,
+  ground,
+  onSelect,
+  onHover,
+}: {
+  feature: BuiltFeature;
+  selected: boolean;
+  ground: (x: number, z: number) => number;
+  onSelect: (id: string) => void;
+  onHover: (id: string | null) => void;
+}) {
+  const anchor = feature.anchor;
+  if (!anchor) return null;
+  const disc = feature.shapes.find((shape) => shape.kind === "disc");
+  const radius = disc && disc.kind === "disc" ? disc.radius : 6;
+  const height = disc && disc.kind === "disc" ? disc.height : 4;
+  const y = ground(anchor.x, anchor.z);
+  return (
+    <group position={[anchor.x, y, anchor.z]}>
+      <mesh
+        position={[0, height / 2, 0]}
+        scale={[1, height / (radius * 2), 1]}
+        userData={{ pick: true }}
+        onClick={(event) => {
+          event.stopPropagation();
+          onSelect(feature.id);
+        }}
+        onPointerOver={(event) => {
+          event.stopPropagation();
+          onHover(feature.id);
+        }}
+        onPointerOut={() => onHover(null)}
+      >
+        <sphereGeometry args={[radius, 32, 20]} />
+        <meshStandardMaterial color={selected ? "#f0d48a" : "#c5d0d6"} emissive={selected ? "#6a5420" : "#000"} metalness={0.25} roughness={0.55} />
+      </mesh>
+      <Html position={[0, height + 6, 0]} center zIndexRange={[12, 0]} distanceFactor={280}>
+        <span className="marker-label" onClick={() => onSelect(feature.id)}>
+          {feature.name}
+        </span>
+      </Html>
+    </group>
+  );
+}
+
+function GroundWalk({
+  mode,
+  standToken,
+  standAt,
+  mobile,
+  stick,
+  site,
+  heights,
+  craft,
+}: Props & { heights: Int16Array | null; craft: boolean }) {
+  const { camera, gl, scene } = useThree();
+  const eye = useRef(new Vector3());
+  const yaw = useRef(0);
+  const pitch = useRef(0);
+  const keys = useRef<Record<string, boolean>>({});
+  const walkGoal = useRef<Vector3 | null>(null);
+  const raycaster = useRef(new Raycaster());
+  const pointer = useRef(new Vector2());
+  const place = (x: number, z: number) => {
+    const y = craft || !site.terrain || !heights ? 1.7 : sampleGround(site.terrain, heights, { lat: site.latitude, lon: site.longitude }, x, z) + 1.7;
+    return y;
+  };
+
+  useEffect(() => {
+    const lock = () => {
+      if (window.matchMedia("(pointer: coarse)").matches) return;
+      gl.domElement.requestPointerLock();
+    };
+    window.addEventListener("atlas-lock", lock);
+    return () => window.removeEventListener("atlas-lock", lock);
+  }, [gl]);
+
+  useEffect(() => {
+    if (mode !== "walk" || !standAt || standToken === 0) return;
+    eye.current.set(standAt.x, place(standAt.x, standAt.z), standAt.z);
+    yaw.current = 0;
+    pitch.current = craft ? 0 : -0.25;
+    camera.position.copy(eye.current);
+    camera.rotation.order = "YXZ";
+    camera.rotation.set(pitch.current, yaw.current, 0);
+  }, [mode, standToken, standAt, camera, craft, heights, site]);
+
+  useEffect(() => {
+    if (mode !== "walk") return;
+    const down = (event: KeyboardEvent) => {
+      keys.current[event.code] = true;
+      if (["KeyW", "KeyA", "KeyS", "KeyD"].includes(event.code)) event.preventDefault();
+    };
+    const up = (event: KeyboardEvent) => {
+      keys.current[event.code] = false;
+    };
+    const look = (event: MouseEvent) => {
+      if (document.pointerLockElement !== gl.domElement) return;
+      yaw.current -= event.movementX * 0.0022;
+      pitch.current = Math.max(-1.15, Math.min(1.15, pitch.current - event.movementY * 0.0022));
+    };
+    window.addEventListener("keydown", down);
+    window.addEventListener("keyup", up);
+    document.addEventListener("mousemove", look);
+    return () => {
+      window.removeEventListener("keydown", down);
+      window.removeEventListener("keyup", up);
+      document.removeEventListener("mousemove", look);
+    };
+  }, [mode, gl]);
+
+  useEffect(() => {
+    if (mode !== "walk") return;
+    const element = gl.domElement;
+    let dragging = false;
+    let lastX = 0;
+    let lastY = 0;
+    let downX = 0;
+    let downY = 0;
+    let downAt = 0;
+    const coarse = () => window.matchMedia("(pointer: coarse)").matches || mobile;
+    const down = (event: PointerEvent) => {
+      if (!event.isPrimary) return;
+      if (event.pointerType === "mouse" && !coarse()) return;
+      dragging = true;
+      lastX = downX = event.clientX;
+      lastY = downY = event.clientY;
+      downAt = performance.now();
+    };
+    const move = (event: PointerEvent) => {
+      if (!dragging || !event.isPrimary) return;
+      yaw.current -= (event.clientX - lastX) * 0.0045;
+      pitch.current = Math.max(-1.15, Math.min(1.15, pitch.current - (event.clientY - lastY) * 0.0045));
+      lastX = event.clientX;
+      lastY = event.clientY;
+    };
+    const up = (event: PointerEvent) => {
+      if (!dragging) return;
+      dragging = false;
+      const moved = Math.hypot(event.clientX - downX, event.clientY - downY);
+      if (moved > 14 || performance.now() - downAt > 400) return;
+      const rect = element.getBoundingClientRect();
+      pointer.current.set(((event.clientX - rect.left) / rect.width) * 2 - 1, -((event.clientY - rect.top) / rect.height) * 2 + 1);
+      raycaster.current.setFromCamera(pointer.current, camera);
+      const hits = raycaster.current.intersectObjects(scene.children, true);
+      if (hits.some((hit) => (hit.object.userData as { pick?: boolean }).pick)) return;
+      const groundHit = hits.find((hit) => (hit.object.userData as { ground?: boolean }).ground);
+      if (groundHit) walkGoal.current = groundHit.point.clone();
+    };
+    element.addEventListener("pointerdown", down);
+    element.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", up);
+    return () => {
+      element.removeEventListener("pointerdown", down);
+      element.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", up);
+    };
+  }, [mode, gl, camera, scene, mobile]);
+
+  useFrame((_, delta) => {
+    if (mode !== "walk") return;
+    const step = ((craft ? 1.4 : 6.5) * (keys.current.ShiftLeft || keys.current.ShiftRight ? 2.4 : 1)) * Math.min(delta, 0.05);
+    let x = eye.current.x;
+    let z = eye.current.z;
+    const joyX = stick.current.x;
+    const joyY = stick.current.y;
+    if (Math.hypot(joyX, joyY) > 0.12) walkGoal.current = null;
+    const forward = (keys.current.KeyW ? 1 : 0) + (joyY > 0.12 ? joyY : 0) - (keys.current.KeyS ? 1 : 0) - (joyY < -0.12 ? -joyY : 0);
+    const strafe = (keys.current.KeyD ? 1 : 0) + (joyX > 0.12 ? joyX : 0) - (keys.current.KeyA ? 1 : 0) - (joyX < -0.12 ? -joyX : 0);
+    if (forward) {
+      x += -Math.sin(yaw.current) * step * forward;
+      z += -Math.cos(yaw.current) * step * forward;
+    }
+    if (strafe) {
+      x += Math.cos(yaw.current) * step * strafe;
+      z += -Math.sin(yaw.current) * step * strafe;
+    }
+    const goal = walkGoal.current;
+    if (goal) {
+      const dx = goal.x - x;
+      const dz = goal.z - z;
+      const dist = Math.hypot(dx, dz);
+      if (dist < 1.2) walkGoal.current = null;
+      else {
+        const pace = Math.min(step, dist);
+        x += (dx / dist) * pace;
+        z += (dz / dist) * pace;
+        yaw.current = Math.atan2(-dx, -dz);
+      }
+    }
+    if (craft) {
+      const reach = 7;
+      const radius = Math.hypot(x, z);
+      if (radius > reach) {
+        x *= reach / radius;
+        z *= reach / radius;
+      }
+    } else if (site.terrain) {
+      const lonScale = metresPerDegLon(site.latitude);
+      const minX = (site.terrain.west - site.longitude) * lonScale;
+      const maxX = (site.terrain.east - site.longitude) * lonScale;
+      const minZ = (site.terrain.south - site.latitude) * METRES_PER_DEG_LAT;
+      const maxZ = (site.terrain.north - site.latitude) * METRES_PER_DEG_LAT;
+      x = Math.min(maxX - 20, Math.max(minX + 20, x));
+      z = Math.min(maxZ - 20, Math.max(minZ + 20, z));
+    }
+    eye.current.set(x, place(x, z), z);
+    camera.position.copy(eye.current);
+    camera.rotation.order = "YXZ";
+    camera.rotation.set(pitch.current, yaw.current, 0);
+  });
+
   return null;
 }
