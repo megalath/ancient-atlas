@@ -788,6 +788,38 @@ function Intro({ khufu }: { khufu: boolean }) {
   );
 }
 
+function FeatureFigure({
+  image,
+  priority = false,
+  onLoad,
+}: {
+  image: BuiltFeature["images"][number];
+  priority?: boolean;
+  onLoad?: () => void;
+}) {
+  return (
+    <figure>
+      <img
+        src={image.url}
+        alt={image.title}
+        loading={priority ? "eager" : "lazy"}
+        decoding={priority ? "sync" : "async"}
+        fetchPriority={priority ? "high" : "auto"}
+        onLoad={onLoad}
+      />
+      <figcaption>
+        {image.title}. {image.author}, {image.license}. <a href={image.page}>Source</a>
+        {image.licenseUrl ? (
+          <>
+            {" "}
+            · <a href={image.licenseUrl}>licence</a>
+          </>
+        ) : null}
+      </figcaption>
+    </figure>
+  );
+}
+
 function FeatureCard({
   feature,
   sources,
@@ -799,16 +831,29 @@ function FeatureCard({
   khufu: boolean;
   onStand: () => void;
 }) {
+  const [lead, ...moreImages] = feature.images;
+  const [leadReady, setLeadReady] = useState(false);
   return (
     <article className="feature-panel" data-testid="feature-panel">
-      <p className="eyebrow">{feature.group}</p>
-      <h2>{feature.name}</h2>
-      <p>
-        <span className={`badge ${feature.evidence}`}>{feature.evidence}</span>
-        <span className={`badge ${feature.accuracy}`}>{feature.accuracy}</span>
-        {feature.schematic ? <span className="badge schematic">schematic part</span> : null}
-      </p>
-      <p className="description">{feature.description}</p>
+      <div className="feature-lead">
+        <div>
+          <p className="eyebrow">{feature.group}</p>
+          <h2>{feature.name}</h2>
+          <p>
+            <span className={`badge ${feature.evidence}`}>{feature.evidence}</span>
+            <span className={`badge ${feature.accuracy}`}>{feature.accuracy}</span>
+            {feature.schematic ? <span className="badge schematic">schematic part</span> : null}
+          </p>
+          <p className="description">{feature.description}</p>
+        </div>
+        {lead ? (
+          <FeatureFigure
+            image={lead}
+            priority
+            onLoad={() => setLeadReady(true)}
+          />
+        ) : null}
+      </div>
       {khufu ? (
         <div className="tools">
           <button type="button" className="text-button" onClick={onStand}>
@@ -816,23 +861,13 @@ function FeatureCard({
           </button>
         </div>
       ) : null}
-      <div className="figures">
-        {feature.images.map((image) => (
-          <figure key={image.id}>
-            <img src={image.url} alt={image.title} />
-            <figcaption>
-              {image.title}. {image.author}, {image.license}.{" "}
-              <a href={image.page}>Source</a>
-              {image.licenseUrl ? (
-                <>
-                  {" "}
-                  · <a href={image.licenseUrl}>licence</a>
-                </>
-              ) : null}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      {leadReady && moreImages.length > 0 ? (
+        <div className="figures">
+          {moreImages.map((image) => (
+            <FeatureFigure key={image.id} image={image} />
+          ))}
+        </div>
+      ) : null}
       <h3>Read more</h3>
       <ul className="read-more">
         {feature.links.map((link) => (
