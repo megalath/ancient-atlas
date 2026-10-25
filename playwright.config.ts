@@ -12,7 +12,11 @@ export default defineConfig({
     trace: "retain-on-failure",
   },
   webServer: {
-    command: "npm run dev -- --hostname 127.0.0.1 --port 3000",
+    // CI builds first, then serves that build. The dev server's error overlay
+    // holds the only connections and the panel photograph never finishes loading.
+    command: process.env.CI
+      ? "npm run start -- --hostname 127.0.0.1 --port 3000"
+      : "npm run dev -- --hostname 127.0.0.1 --port 3000",
     url: "http://127.0.0.1:3000",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
