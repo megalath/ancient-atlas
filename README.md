@@ -2,6 +2,8 @@
 
 An open-source, MIT-licensed 3D atlas of the ancient world. Version 1 is a sourced reconstruction of the **Great Pyramid of Khufu** at Giza: the original shell, the monument as it stands, and the passages, chambers, shafts and voids inside it.
 
+**Live site:** [ancient-atlas-omega.vercel.app](https://ancient-atlas-omega.vercel.app)
+
 The aim is the one a surveyor would recognise. Placement, orientation, scale and size come from published measurements. Where the sources disagree, the dataset records the range and the value that was drawn.
 
 ## What you can do
