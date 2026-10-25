@@ -29,6 +29,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" as="image" href="/sites/khufu/images/gallery-adler.jpg" fetchPriority="high" />
+      </head>
       <body className={`${display.variable} ${sans.variable}`}>{children}</body>
     </html>
   );

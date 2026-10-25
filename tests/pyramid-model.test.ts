@@ -340,6 +340,8 @@ describe("the ledger behind the mesh", () => {
         expect(image.license.toLowerCase()).not.toContain("copyrighted free use");
         expect(image.page).toContain("commons.wikimedia.org");
         expect(image.file?.startsWith("/sites/khufu/images/")).toBe(true);
+        expect(image.url).toBe(image.file);
+        expect(image.url).not.toContain("wikimedia.org");
         expect(fs.existsSync(`public${image.file}`)).toBe(true);
       }
     }

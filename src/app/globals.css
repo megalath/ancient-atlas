@@ -33,15 +33,20 @@ a { color: var(--gold-2); }
 
 .app {
   height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 21rem minmax(0, 1fr) 24rem;
+  grid-template-rows: minmax(0, 1fr);
   background: var(--ink);
 }
 
 .rail {
   display: flex;
   flex-direction: column;
+  height: 100%;
   min-height: 0;
+  overflow: hidden;
   border-color: var(--line);
   border-style: solid;
   background: rgba(20, 17, 14, 0.92);
@@ -51,7 +56,9 @@ a { color: var(--gold-2); }
 .rail.right { border-width: 0 0 0 1px; }
 
 .rail-scroll {
+  flex: 1 1 auto;
   overflow: auto;
+  overscroll-behavior: contain;
   padding: 1.1rem 1.05rem 1.4rem;
   padding-left: max(1.05rem, env(safe-area-inset-left));
   padding-right: max(1.05rem, env(safe-area-inset-right));
@@ -176,10 +183,44 @@ h3 { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; colo
 .read-more { list-style: none; margin: 0.3rem 0 0.6rem; padding: 0; }
 .read-more li { padding: 0.35rem 0; min-height: 44px; display: flex; align-items: center; }
 
-.figures { display: flex; flex-direction: column; gap: 0.8rem; margin: 0.6rem 0; }
-.figures figure { margin: 0; }
-.figures img { width: 100%; height: auto; display: block; background: #2a241c; }
-.figures figcaption { color: var(--paper-dim); font-size: 0.78rem; margin-top: 0.3rem; }
+.feature-lead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: start;
+}
+.feature-lead figure, .figures figure { margin: 0; min-width: 0; }
+.figures { display: flex; flex-direction: column; gap: 0.8rem; margin: 0.8rem 0; }
+.feature-lead img, .figures img {
+  width: 100%;
+  height: min(32dvh, 15rem);
+  object-fit: contain;
+  object-position: center top;
+  display: block;
+  background: #2a241c;
+  scroll-margin: 0.75rem;
+}
+.feature-lead figcaption, .figures figcaption { color: var(--paper-dim); font-size: 0.78rem; margin-top: 0.3rem; }
+
+.app.is-compact .feature-panel .description {
+  max-height: min(8.75rem, 30dvh);
+  overflow: auto;
+}
+.app.is-compact .feature-lead img, .app.is-compact .figures img {
+  height: min(28dvh, 11rem);
+}
+
+@media (max-height: 520px) {
+  .app.is-compact .feature-lead {
+    grid-template-columns: minmax(0, 1.15fr) minmax(7.5rem, 0.85fr);
+  }
+  .app.is-compact .feature-panel .description {
+    max-height: 36dvh;
+  }
+  .app.is-compact .feature-lead img {
+    height: min(46dvh, 9.5rem);
+  }
+}
 
 .tools { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.7rem; }
 
