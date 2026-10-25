@@ -1,0 +1,52 @@
+name: Data correction with source
+description: A dimension, coordinate, orientation or citation disagrees with a published source.
+title: "Data: "
+labels: ["data", "accuracy"]
+body:
+  - type: input
+    id: feature
+    attributes:
+      label: Feature id
+      description: The id in data/great-pyramid.json, for example kings-chamber or north-face-corridor.
+      placeholder: queens-chamber
+    validations:
+      required: true
+  - type: input
+    id: measure
+    attributes:
+      label: Measure key
+      description: The key under measures or angles, if you know it.
+      placeholder: qc.ns.in
+    validations:
+      required: false
+  - type: textarea
+    id: current
+    attributes:
+      label: Value in the dataset now
+      description: Quote the number and the unit. Say "not recorded" if the feature is missing.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed value
+      description: The number you want drawn, with its unit. If sources disagree, give the range and the value you would choose.
+    validations:
+      required: true
+  - type: textarea
+    id: citation
+    attributes:
+      label: Source
+      description: Author, title, year, and the page, section, plate or table. A URL to the publication. Wikipedia alone is not a source for a length.
+      placeholder: |
+        Petrie, The Pyramids and Temples of Gizeh (1883), §55.
+        https://www.ronaldbirdsall.com/gizeh/petrie/c7.html
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Why the change is right
+      description: Include the conversion if you went from inches or cubits to metres. Name any other survey that disagrees.
+    validations:
+      required: true

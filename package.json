@@ -1,0 +1,30 @@
+{
+  "name": "ancient-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Open-source 3D atlas of the ancient world. Version 1 reconstructs the Great Pyramid of Khufu.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "validate": "vitest run"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.4.0",
+    "next": "^15.5.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@types/three": "^0.180.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

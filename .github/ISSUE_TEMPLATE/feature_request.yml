@@ -1,0 +1,29 @@
+name: Feature request
+description: A site, a layer, or a piece of the viewer that v1 does not have.
+title: "Feature: "
+labels: ["roadmap"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What should be added
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - Another monument or site
+        - A layer or a view of the Great Pyramid
+        - The globe or the timeline
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources, if this is a reconstruction
+      description: A new monument needs a survey or a paper the way the Great Pyramid does. Name it if you have it.
+    validations:
+      required: false
