@@ -58,7 +58,12 @@ export type MaterialId =
   | "shaft"
   | "void"
   | "forced"
-  | "chevron";
+  | "chevron"
+  | "sand"
+  | "asphalt"
+  | "water"
+  | "metal"
+  | "reactor";
 
 export type Shape =
   | { kind: "pyramid"; base: number; height: number }
@@ -98,23 +103,55 @@ export type Shape =
       verticalHeight: number;
       rampVertical: number;
       laps: number;
-    };
+    }
+  | { kind: "cylinder"; x?: number; y: number; z?: number; radius: number; height: number }
+  | { kind: "disc"; radius: number; height: number }
+  | { kind: "runway"; from: Vec3; to: Vec3; width: number }
+  | { kind: "polygon"; y: number; height?: number; points: { x: number; z: number }[] };
+
+export type Evidence = "verified" | "testimony" | "estimated";
+
+export type SceneId = "monument" | "terrain" | "sport-model";
 
 export type Fact = {
   label: string;
   value: string;
   sourceId: string;
   locator?: string;
+  evidence?: Evidence;
 };
 
 export type BuiltFeature = {
   id: string;
   name: string;
-  group: "Exterior" | "Passages" | "Chambers" | "Shafts" | "Voids" | "Intrusions";
-  layer: "casing" | "core" | "interior";
+  group:
+    | "Exterior"
+    | "Passages"
+    | "Chambers"
+    | "Shafts"
+    | "Voids"
+    | "Intrusions"
+    | "Airfield"
+    | "Terrain"
+    | "Installation"
+    | "Craft"
+    | "Claims";
+  layer:
+    | "casing"
+    | "core"
+    | "interior"
+    | "terrain"
+    | "airfield"
+    | "buildings"
+    | "boundary"
+    | "s4"
+    | "hull"
+    | "craft-interior";
   accuracy: Accuracy;
   schematic: boolean;
   material: MaterialId;
+  evidence: Evidence;
+  scene: SceneId;
   summary: string;
   description: string;
   links: AtlasLink[];
@@ -341,7 +378,13 @@ function imagesFor(id: string): Media[] {
   }));
 }
 
-function feature(input: Omit<BuiltFeature, "images" | "sourceIds" | "summary" | "description" | "links"> & { summary?: string }): BuiltFeature {
+function feature(
+  input: Omit<BuiltFeature, "images" | "sourceIds" | "summary" | "description" | "links" | "evidence" | "scene"> & {
+    summary?: string;
+    evidence?: Evidence;
+    scene?: SceneId;
+  },
+): BuiltFeature {
   const doc = docs.get(input.id);
   const description = doc?.description ?? input.summary ?? dataset.summaries[input.id] ?? input.name;
   const links = (doc?.links ?? []).map((link) => ({
@@ -354,6 +397,8 @@ function feature(input: Omit<BuiltFeature, "images" | "sourceIds" | "summary" | 
   );
   return {
     ...input,
+    evidence: input.evidence ?? "verified",
+    scene: input.scene ?? "monument",
     name: doc?.name ?? input.name,
     summary: description,
     description,
@@ -1358,6 +1403,16 @@ export function shapeCenter(shape: Shape): Vec3 {
       );
     case "gable":
       return v(shape.centerX, shape.floorY + shape.ridge / 2, shape.centerZ);
+    case "cylinder":
+      return v(shape.x ?? 0, shape.y + shape.height / 2, shape.z ?? 0);
+    case "disc":
+      return v(0, shape.height / 2, 0);
+    case "runway":
+      return lerp(shape.from, shape.to, 0.5);
+    case "polygon": {
+      const point = shape.points[0] ?? { x: 0, z: 0 };
+      return v(point.x, shape.y, point.z);
+    }
   }
 }
 

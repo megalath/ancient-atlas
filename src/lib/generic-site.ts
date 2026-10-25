@@ -1,4 +1,4 @@
-import type { Accuracy, BuiltFeature, MaterialId, Media, SceneModel, Shape, Vec3 } from "./pyramid-model";
+import type { Accuracy, BuiltFeature, Evidence, MaterialId, Media, SceneId, SceneModel, Shape, Vec3 } from "./pyramid-model";
 
 type GenericImage = {
   id: string;
@@ -20,6 +20,8 @@ type GenericFeature = {
   accuracy: Accuracy;
   schematic?: boolean;
   material: MaterialId;
+  evidence?: Evidence;
+  scene?: SceneId;
   description: string;
   links?: BuiltFeature["links"];
   facts?: BuiltFeature["facts"];
@@ -78,6 +80,8 @@ export function buildGenericModel(pack: GenericPackage): SceneModel & {
       accuracy: feature.accuracy,
       schematic: Boolean(feature.schematic),
       material: feature.material,
+      evidence: feature.evidence ?? "verified",
+      scene: feature.scene ?? "monument",
       summary: feature.description,
       description: feature.description,
       links: feature.links ?? [],

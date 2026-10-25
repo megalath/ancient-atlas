@@ -1,0 +1,1535 @@
+{
+  "schemaVersion": 1,
+  "features": [
+    {
+      "id": "groom-lake",
+      "name": "Groom Lake",
+      "group": "Terrain",
+      "layer": "terrain",
+      "accuracy": "reconstructed",
+      "evidence": "verified",
+      "scene": "terrain",
+      "schematic": false,
+      "material": "water",
+      "description": "Groom Lake is the dry lakebed the base is built against. Wikipedia, citing the published airfield data, places Homey Airport at 37\u00b014\u20320\u2033N, 115\u00b048\u203230\u2033W, and describes the salt flat as about 3.75 miles north to south and about 3 miles east to west. The pale playa in this view is the Sentinel-2 cloudless mosaic for 2021. Public NAIP in the Planetary Computer catalog has no tile over this quadrangle, so the drape is Copernicus Sentinel-2 rather than NAIP. The drawn ellipse uses those published diameters. Its centre on the mosaic is estimated.",
+      "links": [
+        {
+          "label": "Wikipedia: Area 51",
+          "url": "https://en.wikipedia.org/wiki/Area_51",
+          "sourceId": "wikipedia-area51"
+        },
+        {
+          "label": "CIA: The CIA and the U-2 Program",
+          "url": "https://www.cia.gov/resources/csi/books-monographs/the-cia-and-the-u-2-program-1954-1974/",
+          "sourceId": "cia-u2"
+        }
+      ],
+      "images": [
+        {
+          "id": "groom-sentinel",
+          "title": "Groom Lake and Papoose Lake, Sentinel-2 cloudless",
+          "file": "/sites/area-51/images/sentinel-groom.jpg",
+          "page": "https://s2maps.eu/",
+          "author": "EOX IT Services GmbH (modified Copernicus Sentinel data 2021)",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Airport reference point",
+          "value": "37\u00b014\u20320\u2033N, 115\u00b048\u203230\u2033W",
+          "sourceId": "wikipedia-area51",
+          "evidence": "verified"
+        },
+        {
+          "label": "Published lakebed size",
+          "value": "about 3.75 mi north\u2013south and 3 mi east\u2013west",
+          "sourceId": "wikipedia-area51",
+          "evidence": "verified"
+        },
+        {
+          "label": "Drawn centre",
+          "value": "37.268\u00b0N, 115.805\u00b0W, estimated for visualization on the mosaic",
+          "sourceId": "eox-s2",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "polygon",
+          "y": 0,
+          "height": 1,
+          "points": [
+            {
+              "x": 2710.79,
+              "z": 3852.61
+            },
+            {
+              "x": 2592.59,
+              "z": 4785.22
+            },
+            {
+              "x": 2249.55,
+              "z": 5626.54
+            },
+            {
+              "x": 1715.25,
+              "z": 6294.22
+            },
+            {
+              "x": 1041.99,
+              "z": 6722.9
+            },
+            {
+              "x": 295.68,
+              "z": 6870.61
+            },
+            {
+              "x": -450.63,
+              "z": 6722.9
+            },
+            {
+              "x": -1123.89,
+              "z": 6294.22
+            },
+            {
+              "x": -1658.18,
+              "z": 5626.54
+            },
+            {
+              "x": -2001.23,
+              "z": 4785.22
+            },
+            {
+              "x": -2119.43,
+              "z": 3852.61
+            },
+            {
+              "x": -2001.23,
+              "z": 2919.99
+            },
+            {
+              "x": -1658.18,
+              "z": 2078.67
+            },
+            {
+              "x": -1123.89,
+              "z": 1410.99
+            },
+            {
+              "x": -450.63,
+              "z": 982.32
+            },
+            {
+              "x": 295.68,
+              "z": 834.61
+            },
+            {
+              "x": 1041.99,
+              "z": 982.32
+            },
+            {
+              "x": 1715.25,
+              "z": 1410.99
+            },
+            {
+              "x": 2249.55,
+              "z": 2078.67
+            },
+            {
+              "x": 2592.59,
+              "z": 2919.99
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runway-14-32",
+      "name": "Runway 14/32",
+      "group": "Airfield",
+      "layer": "airfield",
+      "accuracy": "reconstructed",
+      "evidence": "verified",
+      "scene": "terrain",
+      "schematic": false,
+      "material": "asphalt",
+      "description": "Runway 14/32 is the long paved strip on the southwest side of the lakebed. Jeppesen, as quoted on Wikipedia, gives 14L/32R as 3,657 m (11,998 ft) of asphalt. A 2008 pilot report described a further closed stretch of about 11,000 ft continuing onto the lakebed. The green line in the model is the published 3,657 m. Its heading, about 156\u00b0 true, was placed by eye on the Sentinel-2 mosaic so the line sits on the visible strip. The endpoints are estimated. The runway number 14 is a magnetic designation, not a surveyed true azimuth. Drawn width is estimated.",
+      "links": [
+        {
+          "label": "Wikipedia: Area 51",
+          "url": "https://en.wikipedia.org/wiki/Area_51",
+          "sourceId": "wikipedia-area51"
+        },
+        {
+          "label": "CIA: The CIA and the U-2 Program",
+          "url": "https://www.cia.gov/resources/csi/books-monographs/the-cia-and-the-u-2-program-1954-1974/",
+          "sourceId": "cia-u2"
+        }
+      ],
+      "images": [
+        {
+          "id": "runway-sentinel",
+          "title": "Groom Lake and Papoose Lake, Sentinel-2 cloudless",
+          "file": "/sites/area-51/images/sentinel-groom.jpg",
+          "page": "https://s2maps.eu/",
+          "author": "EOX IT Services GmbH (modified Copernicus Sentinel data 2021)",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Paved length",
+          "value": "3,657 m (11,998 ft)",
+          "sourceId": "wikipedia-area51",
+          "evidence": "verified"
+        },
+        {
+          "label": "Lakebed continuation",
+          "value": "about 11,000 ft, estimated for visualization from a 2008 pilot description of a closed extension",
+          "sourceId": "wikipedia-area51",
+          "evidence": "estimated"
+        },
+        {
+          "label": "Endpoints and heading",
+          "value": "estimated for visualization on the 2021 Sentinel-2 mosaic, near 156\u00b0 true",
+          "sourceId": "eox-s2",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "runway",
+          "from": {
+            "x": 220.58,
+            "y": 0,
+            "z": 1395.44
+          },
+          "to": {
+            "x": 1708.27,
+            "y": 0,
+            "z": -1945.39
+          },
+          "width": 60
+        },
+        {
+          "kind": "runway",
+          "from": {
+            "x": -1143.43,
+            "y": 0,
+            "z": 4458.56
+          },
+          "to": {
+            "x": 220.58,
+            "y": 0,
+            "z": 1395.44
+          },
+          "width": 50
+        }
+      ]
+    },
+    {
+      "id": "runway-12-30",
+      "name": "Runway 12/30",
+      "group": "Airfield",
+      "layer": "airfield",
+      "accuracy": "reconstructed",
+      "evidence": "verified",
+      "scene": "terrain",
+      "schematic": true,
+      "material": "asphalt",
+      "description": "Runway 12/30 is the shorter paved strip. Jeppesen, via Wikipedia, lists it at 1,652 m (5,420 ft). The model draws that length. The mosaic at about 10 m per pixel does not separate this strip cleanly from the taxiways beside 14/32, so the position and the true heading are estimated. The runway number is magnetic. The drawn width is estimated for visualization.",
+      "links": [
+        {
+          "label": "Wikipedia: Area 51",
+          "url": "https://en.wikipedia.org/wiki/Area_51",
+          "sourceId": "wikipedia-area51"
+        },
+        {
+          "label": "CIA: The CIA and the U-2 Program",
+          "url": "https://www.cia.gov/resources/csi/books-monographs/the-cia-and-the-u-2-program-1954-1974/",
+          "sourceId": "cia-u2"
+        }
+      ],
+      "images": [
+        {
+          "id": "r12-sentinel",
+          "title": "Groom Lake and Papoose Lake, Sentinel-2 cloudless",
+          "file": "/sites/area-51/images/sentinel-groom.jpg",
+          "page": "https://s2maps.eu/",
+          "author": "EOX IT Services GmbH (modified Copernicus Sentinel data 2021)",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Paved length",
+          "value": "1,652 m (5,420 ft)",
+          "sourceId": "wikipedia-area51",
+          "evidence": "verified"
+        },
+        {
+          "label": "Position",
+          "value": "estimated for visualization beside the main base",
+          "sourceId": "eox-s2",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "runway",
+          "from": {
+            "x": 302.81,
+            "y": 0,
+            "z": 71.13
+          },
+          "to": {
+            "x": 1530.42,
+            "y": 0,
+            "z": -1034.28
+          },
+          "width": 36
+        }
+      ]
+    },
+    {
+      "id": "lakebed-runways",
+      "name": "Lakebed runways",
+      "group": "Airfield",
+      "layer": "airfield",
+      "accuracy": "schematic",
+      "evidence": "verified",
+      "scene": "terrain",
+      "schematic": true,
+      "material": "sand",
+      "description": "The dry lake carries marked strips as well as the paved runway. Jeppesen, via Wikipedia, lists 09L/27R and 09R/27L at 3,470 m (11,385 ft) and 03L/21R and 03R/21L at 3,048 m (10,000 ft), all on the dry lake. Those lengths are what the model draws. The paint is not resolved on this 10 m mosaic, where the playa is nearly white, so the positions and true headings are estimated. The numbers are magnetic designations.",
+      "links": [
+        {
+          "label": "Wikipedia: Area 51",
+          "url": "https://en.wikipedia.org/wiki/Area_51",
+          "sourceId": "wikipedia-area51"
+        },
+        {
+          "label": "CIA: The CIA and the U-2 Program",
+          "url": "https://www.cia.gov/resources/csi/books-monographs/the-cia-and-the-u-2-program-1954-1974/",
+          "sourceId": "cia-u2"
+        }
+      ],
+      "images": [
+        {
+          "id": "lakebed-sentinel",
+          "title": "Groom Lake and Papoose Lake, Sentinel-2 cloudless",
+          "file": "/sites/area-51/images/sentinel-groom.jpg",
+          "page": "https://s2maps.eu/",
+          "author": "EOX IT Services GmbH (modified Copernicus Sentinel data 2021)",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "09/27 length",
+          "value": "3,470 m (11,385 ft), two strips",
+          "sourceId": "wikipedia-area51",
+          "evidence": "verified"
+        },
+        {
+          "label": "03/21 length",
+          "value": "3,048 m (10,000 ft), two strips",
+          "sourceId": "wikipedia-area51",
+          "evidence": "verified"
+        },
+        {
+          "label": "Drawn positions",
+          "value": "estimated for visualization on the playa",
+          "sourceId": "eox-s2",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "runway",
+          "from": {
+            "x": -2022.98,
+            "y": 0,
+            "z": 3546.54
+          },
+          "to": {
+            "x": 1372.48,
+            "y": 0,
+            "z": 2825.08
+          },
+          "width": 40
+        },
+        {
+          "kind": "runway",
+          "from": {
+            "x": -2023.08,
+            "y": 0,
+            "z": 4046.64
+          },
+          "to": {
+            "x": 1372.58,
+            "y": 0,
+            "z": 3325.18
+          },
+          "width": 40
+        },
+        {
+          "kind": "runway",
+          "from": {
+            "x": -458.46,
+            "y": 0,
+            "z": 2942.32
+          },
+          "to": {
+            "x": 1582.05,
+            "y": 0,
+            "z": 5207.43
+          },
+          "width": 40
+        },
+        {
+          "kind": "runway",
+          "from": {
+            "x": -103.68,
+            "y": 0,
+            "z": 3275.72
+          },
+          "to": {
+            "x": 1936.9,
+            "y": 0,
+            "z": 5540.83
+          },
+          "width": 40
+        }
+      ]
+    },
+    {
+      "id": "main-base",
+      "name": "Main base",
+      "group": "Installation",
+      "layer": "buildings",
+      "accuracy": "reconstructed",
+      "evidence": "verified",
+      "scene": "terrain",
+      "schematic": true,
+      "material": "metal",
+      "description": "The main base is the cluster of buildings and aprons at the southwest corner of the lakebed. The CIA's history of the U-2, declassified in 2013, describes Groom Lake as the site chosen in 1955 for the U-2 test site, with a runway on the lakebed. The block in the model covers the built-up area visible on the Sentinel-2 mosaic. Its edges are estimated. It is not a measured building plan.",
+      "links": [
+        {
+          "label": "Wikipedia: Area 51",
+          "url": "https://en.wikipedia.org/wiki/Area_51",
+          "sourceId": "wikipedia-area51"
+        },
+        {
+          "label": "CIA: The CIA and the U-2 Program",
+          "url": "https://www.cia.gov/resources/csi/books-monographs/the-cia-and-the-u-2-program-1954-1974/",
+          "sourceId": "cia-u2"
+        }
+      ],
+      "images": [
+        {
+          "id": "base-sentinel",
+          "title": "Groom Lake and Papoose Lake, Sentinel-2 cloudless",
+          "file": "/sites/area-51/images/sentinel-groom.jpg",
+          "page": "https://s2maps.eu/",
+          "author": "EOX IT Services GmbH (modified Copernicus Sentinel data 2021)",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Role in the public record",
+          "value": "U-2 test site from 1955, later used for the A-12",
+          "sourceId": "cia-u2",
+          "evidence": "verified"
+        },
+        {
+          "label": "Drawn footprint",
+          "value": "estimated for visualization from the mosaic",
+          "sourceId": "eox-s2",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "aabb",
+          "min": {
+            "x": -1212.29,
+            "y": 0,
+            "z": -592.71
+          },
+          "max": {
+            "x": 118.27,
+            "y": 12,
+            "z": 1074.28
+          }
+        }
+      ]
+    },
+    {
+      "id": "hangars",
+      "name": "Hangars",
+      "group": "Installation",
+      "layer": "buildings",
+      "accuracy": "schematic",
+      "evidence": "verified",
+      "scene": "terrain",
+      "schematic": true,
+      "material": "metal",
+      "description": "Large rectangular roofs are visible on the southwest side of the lake, beside the runway. They are the hangars and shops of the main base. The CIA history and later open satellite views establish that the base has substantial buildings. This drawing uses four boxes as a stand-in for that row. Their count, size, and spacing are estimated for visualization. Individual buildings are not named from a public plan.",
+      "links": [
+        {
+          "label": "Wikipedia: Area 51",
+          "url": "https://en.wikipedia.org/wiki/Area_51",
+          "sourceId": "wikipedia-area51"
+        },
+        {
+          "label": "CIA: The CIA and the U-2 Program",
+          "url": "https://www.cia.gov/resources/csi/books-monographs/the-cia-and-the-u-2-program-1954-1974/",
+          "sourceId": "cia-u2"
+        }
+      ],
+      "images": [
+        {
+          "id": "hangar-sentinel",
+          "title": "Groom Lake and Papoose Lake, Sentinel-2 cloudless",
+          "file": "/sites/area-51/images/sentinel-groom.jpg",
+          "page": "https://s2maps.eu/",
+          "author": "EOX IT Services GmbH (modified Copernicus Sentinel data 2021)",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "What is verified",
+          "value": "Buildings stand at the southwest corner of the lakebed",
+          "sourceId": "wikipedia-area51",
+          "evidence": "verified"
+        },
+        {
+          "label": "Drawn boxes",
+          "value": "four blocks, estimated for visualization",
+          "sourceId": "eox-s2",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "aabb",
+          "min": {
+            "x": -897.48,
+            "y": 0,
+            "z": 271.35
+          },
+          "max": {
+            "x": -817.48,
+            "y": 15,
+            "z": 321.35
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": -897.48,
+            "y": 0,
+            "z": 404.71
+          },
+          "max": {
+            "x": -817.48,
+            "y": 15,
+            "z": 454.71
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": -897.48,
+            "y": 0,
+            "z": 538.07
+          },
+          "max": {
+            "x": -817.48,
+            "y": 15,
+            "z": 588.07
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": -897.48,
+            "y": 0,
+            "z": 671.43
+          },
+          "max": {
+            "x": -817.48,
+            "y": 15,
+            "z": 721.43
+          }
+        }
+      ]
+    },
+    {
+      "id": "restricted-boundary",
+      "name": "Restricted area",
+      "group": "Terrain",
+      "layer": "boundary",
+      "accuracy": "schematic",
+      "evidence": "verified",
+      "scene": "terrain",
+      "schematic": true,
+      "material": "sand",
+      "description": "The airspace over the lake is the restricted area known as R-4808N, often called the Groom box. Wikipedia describes that box as 23 by 25 miles, with the lakebed near its centre. The name and that published size are what this rectangle uses: 23 miles east to west and 25 miles north to south. The exact corners are not taken from a chart in this version, so the drawn corners are estimated, centered on the lakebed.",
+      "links": [
+        {
+          "label": "Wikipedia: Area 51",
+          "url": "https://en.wikipedia.org/wiki/Area_51",
+          "sourceId": "wikipedia-area51"
+        },
+        {
+          "label": "CIA: The CIA and the U-2 Program",
+          "url": "https://www.cia.gov/resources/csi/books-monographs/the-cia-and-the-u-2-program-1954-1974/",
+          "sourceId": "cia-u2"
+        }
+      ],
+      "images": [
+        {
+          "id": "box-sentinel",
+          "title": "Groom Lake and Papoose Lake, Sentinel-2 cloudless",
+          "file": "/sites/area-51/images/sentinel-groom.jpg",
+          "page": "https://s2maps.eu/",
+          "author": "EOX IT Services GmbH (modified Copernicus Sentinel data 2021)",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Name",
+          "value": "R-4808N",
+          "sourceId": "wikipedia-area51",
+          "evidence": "verified"
+        },
+        {
+          "label": "Published size",
+          "value": "23 by 25 miles",
+          "sourceId": "wikipedia-area51",
+          "evidence": "verified"
+        },
+        {
+          "label": "Drawn corners",
+          "value": "estimated for visualization, centered on the lakebed",
+          "sourceId": "wikipedia-area51",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "polygon",
+          "y": 0,
+          "height": 8,
+          "points": [
+            {
+              "x": -18664.31,
+              "z": -16041.93
+            },
+            {
+              "x": 18368.62,
+              "z": -16041.93
+            },
+            {
+              "x": 18368.62,
+              "z": 24191.67
+            },
+            {
+              "x": -18664.31,
+              "z": 24191.67
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "papoose-lake",
+      "name": "Papoose Lake",
+      "group": "Terrain",
+      "layer": "terrain",
+      "accuracy": "reconstructed",
+      "evidence": "verified",
+      "scene": "terrain",
+      "schematic": true,
+      "material": "water",
+      "description": "Papoose Lake is the dry lake south of Groom Lake. It is a real playa, visible on the same Sentinel-2 mosaic, in the mountains about 8 to 9 miles south of the airport reference point. Wikipedia's Area 51 article gives about 8.5 miles for that separation. Lazar said the trip from Groom Lake to the place he called S-4 was about 15 miles, which reaches the hills beyond this lake rather than the lake itself. The drawn centre, near 37.105\u00b0N, 115.850\u00b0W, is estimated from the mosaic. A coordinate sometimes quoted for the lake, 37.114\u00b0N, 115.838\u00b0W, falls on the east side of the bright playa in this image.",
+      "links": [
+        {
+          "label": "Wikipedia: Area 51",
+          "url": "https://en.wikipedia.org/wiki/Area_51",
+          "sourceId": "wikipedia-area51"
+        },
+        {
+          "label": "CIA: The CIA and the U-2 Program",
+          "url": "https://www.cia.gov/resources/csi/books-monographs/the-cia-and-the-u-2-program-1954-1974/",
+          "sourceId": "cia-u2"
+        },
+        {
+          "label": "Wikipedia: Bob Lazar",
+          "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+          "sourceId": "wikipedia-lazar"
+        }
+      ],
+      "images": [
+        {
+          "id": "papoose-sentinel",
+          "title": "Groom Lake and Papoose Lake, Sentinel-2 cloudless",
+          "file": "/sites/area-51/images/sentinel-groom.jpg",
+          "page": "https://s2maps.eu/",
+          "author": "EOX IT Services GmbH (modified Copernicus Sentinel data 2021)",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Wikipedia distance from Groom Lake",
+          "value": "about 8.5 miles south",
+          "sourceId": "wikipedia-area51",
+          "evidence": "verified"
+        },
+        {
+          "label": "Drawn centre",
+          "value": "37.105\u00b0N, 115.850\u00b0W, estimated for visualization",
+          "sourceId": "eox-s2",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "polygon",
+          "y": 0,
+          "height": 1,
+          "points": [
+            {
+              "x": -2298.39,
+              "z": -14262.06
+            },
+            {
+              "x": -2366.8,
+              "z": -13396.81
+            },
+            {
+              "x": -2565.32,
+              "z": -12616.26
+            },
+            {
+              "x": -2874.52,
+              "z": -11996.81
+            },
+            {
+              "x": -3264.13,
+              "z": -11599.1
+            },
+            {
+              "x": -3696.02,
+              "z": -11462.06
+            },
+            {
+              "x": -4127.91,
+              "z": -11599.1
+            },
+            {
+              "x": -4517.52,
+              "z": -11996.81
+            },
+            {
+              "x": -4826.72,
+              "z": -12616.26
+            },
+            {
+              "x": -5025.24,
+              "z": -13396.81
+            },
+            {
+              "x": -5093.64,
+              "z": -14262.06
+            },
+            {
+              "x": -5025.24,
+              "z": -15127.31
+            },
+            {
+              "x": -4826.72,
+              "z": -15907.86
+            },
+            {
+              "x": -4517.52,
+              "z": -16527.31
+            },
+            {
+              "x": -4127.91,
+              "z": -16925.02
+            },
+            {
+              "x": -3696.02,
+              "z": -17062.06
+            },
+            {
+              "x": -3264.13,
+              "z": -16925.02
+            },
+            {
+              "x": -2874.52,
+              "z": -16527.31
+            },
+            {
+              "x": -2565.32,
+              "z": -15907.86
+            },
+            {
+              "x": -2366.8,
+              "z": -15127.31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4-hangars",
+      "name": "S-4 hangars",
+      "group": "Installation",
+      "layer": "s4",
+      "accuracy": "schematic",
+      "evidence": "testimony",
+      "scene": "terrain",
+      "schematic": true,
+      "material": "sand",
+      "description": "S-4 is the facility Bob Lazar said he worked in, south of Groom Lake near Papoose Lake. In his testimony he described nine hangars built into the mountainside, with sloped doors textured and coloured like the sand and rock so they would not read as doors. He said a bus drove south about 15 miles from the main base, passed the nine doors, and turned to a steel door. No public evidence confirms S-4 exists. The mosaic shows ridges there and no such doors. The bay count is his testimony. Door size, spacing, and this coordinate, 37.0278\u00b0N, 115.7764\u00b0W, are estimated for visualization from accounts published by people repeating him.",
+      "links": [
+        {
+          "label": "Wikipedia: Bob Lazar",
+          "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+          "sourceId": "wikipedia-lazar"
+        },
+        {
+          "label": "Joe Rogan Experience #1315",
+          "url": "https://www.youtube.com/watch?v=BEWz4SXfyCQ",
+          "sourceId": "jre-1315"
+        }
+      ],
+      "images": [
+        {
+          "id": "bays",
+          "title": "S-4 bay diagram from Lazar's account",
+          "file": "/sites/area-51/images/s4-bays.png",
+          "page": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "author": "Ancient Atlas",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        {
+          "id": "s4-ground",
+          "title": "Groom Lake and Papoose Lake, Sentinel-2 cloudless",
+          "file": "/sites/area-51/images/sentinel-groom.jpg",
+          "page": "https://s2maps.eu/",
+          "author": "EOX IT Services GmbH (modified Copernicus Sentinel data 2021)",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Bay count",
+          "value": "nine, in his testimony",
+          "sourceId": "klas-knapp",
+          "evidence": "testimony"
+        },
+        {
+          "label": "Doors",
+          "value": "sloped and sand-coloured, disguised as rock, in his testimony",
+          "sourceId": "klas-knapp",
+          "evidence": "testimony"
+        },
+        {
+          "label": "Door size and spacing",
+          "value": "estimated for visualization",
+          "sourceId": "lazar-accounts",
+          "evidence": "estimated"
+        },
+        {
+          "label": "Public confirmation",
+          "value": "none. No public evidence confirms S-4 exists.",
+        "sourceId": "lazar-accounts",
+        "evidence": "testimony"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "aabb",
+          "min": {
+            "x": 2833.6,
+            "y": 0,
+            "z": -23001.96
+          },
+          "max": {
+            "x": 2867.6,
+            "y": 9,
+            "z": -22973.96
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": 2833.6,
+            "y": 0,
+            "z": -22965.96
+          },
+          "max": {
+            "x": 2867.6,
+            "y": 9,
+            "z": -22937.96
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": 2833.6,
+            "y": 0,
+            "z": -22929.96
+          },
+          "max": {
+            "x": 2867.6,
+            "y": 9,
+            "z": -22901.96
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": 2833.6,
+            "y": 0,
+            "z": -22893.96
+          },
+          "max": {
+            "x": 2867.6,
+            "y": 9,
+            "z": -22865.96
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": 2833.6,
+            "y": 0,
+            "z": -22857.96
+          },
+          "max": {
+            "x": 2867.6,
+            "y": 9,
+            "z": -22829.96
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": 2833.6,
+            "y": 0,
+            "z": -22821.96
+          },
+          "max": {
+            "x": 2867.6,
+            "y": 9,
+            "z": -22793.96
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": 2833.6,
+            "y": 0,
+            "z": -22785.96
+          },
+          "max": {
+            "x": 2867.6,
+            "y": 9,
+            "z": -22757.96
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": 2833.6,
+            "y": 0,
+            "z": -22749.96
+          },
+          "max": {
+            "x": 2867.6,
+            "y": 9,
+            "z": -22721.96
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": 2833.6,
+            "y": 0,
+            "z": -22713.96
+          },
+          "max": {
+            "x": 2867.6,
+            "y": 9,
+            "z": -22685.96
+          }
+        }
+      ]
+    },
+    {
+      "id": "s4-interior",
+      "name": "S-4 interior",
+      "group": "Installation",
+      "layer": "s4",
+      "accuracy": "schematic",
+      "evidence": "testimony",
+      "scene": "terrain",
+      "schematic": true,
+      "material": "metal",
+      "description": "Behind the doors, Lazar described a worked interior: a bus that entered and a bay where the craft sat. He did not publish a measured floor plan in the 1989 KLAS interviews, Dreamland (2019), the 2018 film, or JRE #1315 that this model could follow bay by bay. The corridor drawn here is a single volume so the inside can be selected. Every dimension of it is estimated for visualization. No public evidence confirms S-4 exists, and nothing in the open imagery shows an interior. This is testimony, not a survey.",
+      "links": [
+        {
+          "label": "Wikipedia: Bob Lazar",
+          "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+          "sourceId": "wikipedia-lazar"
+        },
+        {
+          "label": "Joe Rogan Experience #1315",
+          "url": "https://www.youtube.com/watch?v=BEWz4SXfyCQ",
+          "sourceId": "jre-1315"
+        }
+      ],
+      "images": [
+        {
+          "id": "bays",
+          "title": "S-4 bay diagram from Lazar's account",
+          "file": "/sites/area-51/images/s4-bays.png",
+          "page": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "author": "Ancient Atlas",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "What he described",
+          "value": "an interior reached through the hangar doors, in his testimony",
+          "sourceId": "klas-knapp",
+          "evidence": "testimony"
+        },
+        {
+          "label": "Drawn corridor",
+          "value": "estimated for visualization",
+          "sourceId": "lazar-accounts",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "aabb",
+          "min": {
+            "x": 2841.6,
+            "y": 0,
+            "z": -23003.96
+          },
+          "max": {
+            "x": 2861.6,
+            "y": 6,
+            "z": -22683.96
+          }
+        }
+      ]
+    },
+    {
+      "id": "claims-and-criticism",
+      "name": "Claims and criticism",
+      "group": "Claims",
+      "layer": "terrain",
+      "accuracy": "reconstructed",
+      "evidence": "verified",
+      "scene": "terrain",
+      "schematic": false,
+      "material": "sand",
+      "description": "This panel is the public argument about Lazar's account, not a feature on the ground. Schools he named have said they have no record of the degrees he claimed. A 1982 Los Alamos Monitor article and a Los Alamos phone-directory listing are the documents usually cited to show he was associated with the laboratory. They do not establish the job he described. Element 115, which he said powered the craft, was synthesized in 2003 and later named moscovium. Its known isotopes are short-lived. That synthesis does not confirm a stable isotope with the gravity effects he described. The disputes are part of the public record. His account of the craft and of S-4 remains testimony.",
+      "links": [
+        {
+          "label": "Wikipedia: Bob Lazar",
+          "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+          "sourceId": "wikipedia-lazar"
+        },
+        {
+          "label": "Wikipedia: Moscovium",
+          "url": "https://en.wikipedia.org/wiki/Moscovium",
+          "sourceId": "wikipedia-moscovium"
+        },
+        {
+          "label": "IUPAC periodic table",
+          "url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+          "sourceId": "iupac"
+        }
+      ],
+      "images": [
+        {
+          "id": "claims",
+          "title": "Claims and criticism, what the public record does and does not show",
+          "file": "/sites/area-51/images/claims-card.png",
+          "page": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "author": "Ancient Atlas",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Education records",
+          "value": "MIT and Caltech have no record of the degrees he claimed",
+          "sourceId": "wikipedia-lazar",
+          "evidence": "verified"
+        },
+        {
+          "label": "Los Alamos traces",
+          "value": "1982 Los Alamos Monitor article and a phone-directory listing",
+          "sourceId": "wikipedia-lazar",
+          "evidence": "verified"
+        },
+        {
+          "label": "Moscovium",
+          "value": "synthesized in 2003; known isotopes are short-lived and do not confirm his claimed fuel",
+          "sourceId": "wikipedia-moscovium",
+          "evidence": "verified"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "aabb",
+          "min": {
+            "x": -40,
+            "y": 0,
+            "z": -40
+          },
+          "max": {
+            "x": 40,
+            "y": 4,
+            "z": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "sport-model",
+      "name": "Sport Model",
+      "group": "Craft",
+      "layer": "hull",
+      "accuracy": "schematic",
+      "evidence": "testimony",
+      "scene": "sport-model",
+      "schematic": true,
+      "material": "metal",
+      "description": "The Sport Model is the craft Lazar said he saw at S-4. In his testimony it is about 40 ft across, 15 to 16 ft tall, with a seamless hull and no visible bolts or panel lines. He described it bobbing in flight, as if it sat on a cushion, rather than banking like an airplane. The drawing uses 40 ft exactly, which is 12.192 m, and a height of 15.5 ft (4.7244 m) inside the range he gave. He has also been quoted at 30 to 35 ft, so the diameter is the figure this atlas was asked to draw, not a surveyed measurement. The smooth disc between those two numbers is estimated for visualization. No public evidence confirms the craft. This is testimony.",
+      "links": [
+        {
+          "label": "Wikipedia: Bob Lazar",
+          "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+          "sourceId": "wikipedia-lazar"
+        },
+        {
+          "label": "Joe Rogan Experience #1315",
+          "url": "https://www.youtube.com/watch?v=BEWz4SXfyCQ",
+          "sourceId": "jre-1315"
+        },
+        {
+          "label": "Film: Bob Lazar: Area 51 & Flying Saucers",
+          "url": "https://en.wikipedia.org/wiki/Bob_Lazar:_Area_51_%26_Flying_Saucers",
+          "sourceId": "lazar-film"
+        }
+      ],
+      "images": [
+        {
+          "id": "exterior",
+          "title": "Sport Model exterior diagram",
+          "file": "/sites/area-51/images/sport-model-exterior.png",
+          "page": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "author": "Ancient Atlas",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        {
+          "id": "cutaway",
+          "title": "Sport Model interior cutaway",
+          "file": "/sites/area-51/images/sport-model-cutaway.png",
+          "page": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "author": "Ancient Atlas",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Stated diameter",
+          "value": "about 40 ft (12.192 m), in his testimony. He has also said 30\u201335 ft.",
+          "sourceId": "lazar-accounts",
+          "evidence": "testimony"
+        },
+        {
+          "label": "Stated height",
+          "value": "15\u201316 ft, in his testimony",
+          "sourceId": "lazar-accounts",
+          "evidence": "testimony"
+        },
+        {
+          "label": "Drawn height",
+          "value": "4.7244 m (15.5 ft), estimated for visualization inside that range",
+          "sourceId": "lazar-accounts",
+          "evidence": "estimated"
+        },
+        {
+          "label": "Hull and flight",
+          "value": "seamless hull, and a bobbing flight, in his testimony",
+          "sourceId": "klas-knapp",
+          "evidence": "testimony"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "disc",
+          "radius": 6.096,
+          "height": 4.7244
+        }
+      ]
+    },
+    {
+      "id": "craft-decks",
+      "name": "Three levels",
+      "group": "Craft",
+      "layer": "craft-interior",
+      "accuracy": "schematic",
+      "evidence": "testimony",
+      "scene": "sport-model",
+      "schematic": true,
+      "material": "metal",
+      "description": "Lazar said the Sport Model had three levels. He put the reactor on the middle level and the gravity amplifiers on the bottom. He did not state the height of each level. This model splits the drawn 15.5 ft into three equal floors. That split is estimated for visualization. The count of three is his testimony. No public evidence confirms the craft.",
+      "links": [
+        {
+          "label": "Wikipedia: Bob Lazar",
+          "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+          "sourceId": "wikipedia-lazar"
+        },
+        {
+          "label": "Joe Rogan Experience #1315",
+          "url": "https://www.youtube.com/watch?v=BEWz4SXfyCQ",
+          "sourceId": "jre-1315"
+        }
+      ],
+      "images": [
+        {
+          "id": "cutaway",
+          "title": "Sport Model interior cutaway",
+          "file": "/sites/area-51/images/sport-model-cutaway.png",
+          "page": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "author": "Ancient Atlas",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Levels",
+          "value": "three, in his testimony",
+          "sourceId": "lazar-accounts",
+          "evidence": "testimony"
+        },
+        {
+          "label": "Floor heights",
+          "value": "equal thirds of 4.7244 m, estimated for visualization",
+          "sourceId": "lazar-accounts",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "cylinder",
+          "y": 0.02,
+          "radius": 4.2,
+          "height": 0.06
+        },
+        {
+          "kind": "cylinder",
+          "y": 1.5948,
+          "radius": 3.9000000000000004,
+          "height": 0.06
+        },
+        {
+          "kind": "cylinder",
+          "y": 3.1696,
+          "radius": 3.6,
+          "height": 0.06
+        }
+      ]
+    },
+    {
+      "id": "reactor",
+      "name": "Reactor",
+      "group": "Craft",
+      "layer": "craft-interior",
+      "accuracy": "schematic",
+      "evidence": "testimony",
+      "scene": "sport-model",
+      "schematic": true,
+      "material": "reactor",
+      "description": "On the 1989 KLAS-TV interviews with George Knapp, Lazar described the reactor as a plate about 18 inches in diameter with a sphere on top, sitting at the centre of the middle level. He said it used element 115 as fuel and that the reaction fed the gravity amplifiers below. Eighteen inches is 0.4572 m, and that is the plate drawn here. He did not state the plate's thickness or the sphere's diameter in that interview, so those two sizes are estimated for visualization. Element 115 as a stable gravity fuel is his testimony. Moscovium, made in 2003, does not confirm it. No public evidence confirms the craft.",
+      "links": [
+        {
+          "label": "Wikipedia: Bob Lazar",
+          "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+          "sourceId": "wikipedia-lazar"
+        },
+        {
+          "label": "Joe Rogan Experience #1315",
+          "url": "https://www.youtube.com/watch?v=BEWz4SXfyCQ",
+          "sourceId": "jre-1315"
+        },
+        {
+          "label": "Wikipedia: Moscovium",
+          "url": "https://en.wikipedia.org/wiki/Moscovium",
+          "sourceId": "wikipedia-moscovium"
+        }
+      ],
+      "images": [
+        {
+          "id": "cutaway",
+          "title": "Sport Model interior cutaway",
+          "file": "/sites/area-51/images/sport-model-cutaway.png",
+          "page": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "author": "Ancient Atlas",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        {
+          "id": "exterior",
+          "title": "Sport Model exterior diagram",
+          "file": "/sites/area-51/images/sport-model-exterior.png",
+          "page": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "author": "Ancient Atlas",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Reactor plate",
+          "value": "about 18 in diameter (0.4572 m), in the 1989 KLAS testimony",
+          "sourceId": "klas-knapp",
+          "evidence": "testimony"
+        },
+        {
+          "label": "Plate thickness and sphere",
+          "value": "estimated for visualization",
+          "sourceId": "klas-knapp",
+          "evidence": "estimated"
+        },
+        {
+          "label": "Fuel",
+          "value": "element 115, in his testimony",
+          "sourceId": "klas-knapp",
+          "evidence": "testimony"
+        },
+        {
+          "label": "Level",
+          "value": "middle of three, in his testimony",
+          "sourceId": "lazar-accounts",
+          "evidence": "testimony"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "cylinder",
+          "y": 1.5748,
+          "radius": 0.2286,
+          "height": 0.05
+        },
+        {
+          "kind": "cylinder",
+          "y": 1.6248,
+          "radius": 0.12,
+          "height": 0.24
+        }
+      ]
+    },
+    {
+      "id": "gravity-amplifiers",
+      "name": "Gravity amplifiers",
+      "group": "Craft",
+      "layer": "craft-interior",
+      "accuracy": "schematic",
+      "evidence": "testimony",
+      "scene": "sport-model",
+      "schematic": true,
+      "material": "metal",
+      "description": "Lazar said three gravity amplifiers sat in the bottom of the Sport Model and shaped the field from the reactor. The count of three, and their place on the lower level, are his testimony from the KLAS interviews and later retellings. He did not give a diameter for them in those four sources that this model treats as stated, so the drawn size and the 2.2 m radius of the ring are estimated for visualization. No public evidence confirms the craft. This remains testimony.",
+      "links": [
+        {
+          "label": "Wikipedia: Bob Lazar",
+          "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+          "sourceId": "wikipedia-lazar"
+        },
+        {
+          "label": "Joe Rogan Experience #1315",
+          "url": "https://www.youtube.com/watch?v=BEWz4SXfyCQ",
+          "sourceId": "jre-1315"
+        }
+      ],
+      "images": [
+        {
+          "id": "cutaway",
+          "title": "Sport Model interior cutaway",
+          "file": "/sites/area-51/images/sport-model-cutaway.png",
+          "page": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "author": "Ancient Atlas",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Count and place",
+          "value": "three, on the bottom level, in his testimony",
+          "sourceId": "klas-knapp",
+          "evidence": "testimony"
+        },
+        {
+          "label": "Drawn size",
+          "value": "0.6 m across and 0.45 m tall, estimated for visualization",
+          "sourceId": "lazar-accounts",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "cylinder",
+          "x": 0.0,
+          "y": 0.05,
+          "z": 2.2,
+          "radius": 0.3,
+          "height": 0.45
+        },
+        {
+          "kind": "cylinder",
+          "x": -1.905,
+          "y": 0.05,
+          "z": -1.1,
+          "radius": 0.3,
+          "height": 0.45
+        },
+        {
+          "kind": "cylinder",
+          "x": 1.905,
+          "y": 0.05,
+          "z": -1.1,
+          "radius": 0.3,
+          "height": 0.45
+        }
+      ]
+    },
+    {
+      "id": "crew-seats",
+      "name": "Seats",
+      "group": "Craft",
+      "layer": "craft-interior",
+      "accuracy": "schematic",
+      "evidence": "testimony",
+      "scene": "sport-model",
+      "schematic": true,
+      "material": "metal",
+      "description": "Lazar said the seats were too small for an adult human. That qualitative description is his testimony. He is not quoted, in the KLAS interviews, Dreamland, the 2018 film, or JRE #1315, with a seat width that this model treats as stated. The drawn seats are 0.36 m wide and 0.42 m high, estimated for visualization, on the upper level. The upper-level placement of the seats is also estimated. No public evidence confirms the craft.",
+      "links": [
+        {
+          "label": "Wikipedia: Bob Lazar",
+          "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+          "sourceId": "wikipedia-lazar"
+        },
+        {
+          "label": "Joe Rogan Experience #1315",
+          "url": "https://www.youtube.com/watch?v=BEWz4SXfyCQ",
+          "sourceId": "jre-1315"
+        }
+      ],
+      "images": [
+        {
+          "id": "cutaway",
+          "title": "Sport Model interior cutaway",
+          "file": "/sites/area-51/images/sport-model-cutaway.png",
+          "page": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "author": "Ancient Atlas",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+      ],
+      "facts": [
+        {
+          "label": "Fit",
+          "value": "described as too small for an adult, in his testimony",
+          "sourceId": "lazar-accounts",
+          "evidence": "testimony"
+        },
+        {
+          "label": "Drawn seat",
+          "value": "0.36 m wide, estimated for visualization",
+          "sourceId": "lazar-accounts",
+          "evidence": "estimated"
+        }
+      ],
+      "geometry": [
+        {
+          "kind": "aabb",
+          "min": {
+            "x": 1.032,
+            "y": 3.1496,
+            "z": 0.52
+          },
+          "max": {
+            "x": 1.392,
+            "y": 3.5696,
+            "z": 0.88
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": -1.392,
+            "y": 3.1496,
+            "z": 0.52
+          },
+          "max": {
+            "x": -1.032,
+            "y": 3.5696,
+            "z": 0.88
+          }
+        },
+        {
+          "kind": "aabb",
+          "min": {
+            "x": -0.18,
+            "y": 3.1496,
+            "z": -1.58
+          },
+          "max": {
+            "x": 0.18,
+            "y": 3.5696,
+            "z": -1.22
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -57,6 +57,31 @@ function shapeInto(box: { min: Vec3; max: Vec3 }, shape: Shape) {
     addPoint(box, shape.max);
     return;
   }
+  if (shape.kind === "cylinder" || shape.kind === "disc") {
+    const radius = shape.kind === "disc" ? shape.radius : shape.radius;
+    const height = shape.height;
+    const x = shape.kind === "cylinder" ? (shape.x ?? 0) : 0;
+    const z = shape.kind === "cylinder" ? (shape.z ?? 0) : 0;
+    const y = shape.kind === "cylinder" ? shape.y : 0;
+    add(box, x - radius, y, z - radius);
+    add(box, x + radius, y + height, z + radius);
+    return;
+  }
+  if (shape.kind === "runway") {
+    addPoint(box, shape.from);
+    addPoint(box, shape.to);
+    const pad = shape.width / 2;
+    box.min.x -= pad;
+    box.max.x += pad;
+    box.min.z -= pad;
+    box.max.z += pad;
+    return;
+  }
+  if (shape.kind === "polygon") {
+    for (const point of shape.points) add(box, point.x, shape.y, point.z);
+    add(box, box.min.x, shape.y + (shape.height ?? 1), box.min.z);
+    return;
+  }
   if (shape.kind === "gable") {
     add(
       box,

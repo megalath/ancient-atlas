@@ -20,7 +20,8 @@
           "title": { "type": "string", "minLength": 2 },
           "container": { "type": "string" },
           "url": { "type": "string", "minLength": 8 },
-          "note": { "type": "string" }
+          "note": { "type": "string" },
+          "kind": { "enum": ["record", "testimony", "estimate"] }
         }
       }
     }
