@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "wikipedia-area51",
+      "authors": "Wikipedia contributors",
+      "year": 2026,
+      "title": "Area 51",
+      "container": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Area_51",
+      "kind": "record",
+      "note": "Airport coordinate, Jeppesen runway lengths, lakebed size, and the 23 by 25 mile box."
+    },
+    {
+      "id": "cia-u2",
+      "authors": "Gregory W. Pedlow and Donald E. Welzenbach",
+      "year": 2013,
+      "title": "The CIA and the U-2 Program, 1954\u20131974",
+      "container": "Center for the Study of Intelligence, declassified 2013",
+      "url": "https://www.cia.gov/resources/csi/books-monographs/the-cia-and-the-u-2-program-1954-1974/",
+      "kind": "record",
+      "note": "CIA history, released in 2013, acknowledging Groom Lake as the U-2 test site."
+    },
+    {
+      "id": "usgs-srtm",
+      "authors": "NASA, NGA, and USGS",
+      "year": 2000,
+      "title": "Shuttle Radar Topography Mission, 1 arc-second",
+      "container": "USGS EROS",
+      "url": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1",
+      "kind": "record",
+      "note": "Public-domain elevation. Tile N37W116."
+    },
+    {
+      "id": "esa-sentinel",
+      "authors": "European Space Agency",
+      "year": 2021,
+      "title": "Copernicus Sentinel-2",
+      "container": "ESA",
+      "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2",
+      "kind": "record",
+      "note": "Free and open Copernicus Sentinel data. Used because public NAIP has a gap over Groom Lake."
+    },
+    {
+      "id": "eox-s2",
+      "authors": "EOX IT Services GmbH",
+      "year": 2021,
+      "title": "Sentinel-2 cloudless",
+      "container": "EOX",
+      "url": "https://s2maps.eu/",
+      "kind": "record",
+      "note": "CC BY 4.0 mosaic of modified Copernicus Sentinel data 2021."
+    },
+    {
+      "id": "wikipedia-lazar",
+      "authors": "Wikipedia contributors",
+      "year": 2026,
+      "title": "Bob Lazar",
+      "container": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+      "kind": "record",
+      "note": "Secondary summary of the education-record dispute and the Los Alamos Monitor article and phone directory."
+    },
+    {
+      "id": "wikipedia-moscovium",
+      "authors": "Wikipedia contributors",
+      "year": 2026,
+      "title": "Moscovium",
+      "container": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Moscovium",
+      "kind": "record",
+      "note": "Element 115 was synthesized in 2003. Known isotopes are short-lived."
+    },
+    {
+      "id": "iupac",
+      "authors": "International Union of Pure and Applied Chemistry",
+      "year": 2016,
+      "title": "Periodic table of elements",
+      "container": "IUPAC",
+      "url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "kind": "record",
+      "note": "Naming authority for moscovium. Does not confirm a stable isotope with the properties Lazar claimed."
+    },
+    {
+      "id": "klas-knapp",
+      "authors": "Bob Lazar, interviewed by George Knapp",
+      "year": 1989,
+      "title": "KLAS-TV interviews",
+      "container": "KLAS-TV, Las Vegas",
+      "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+      "kind": "testimony",
+      "note": "November and December 1989 interviews. The 18-inch reactor plate is from this testimony. The Wikipedia article is the stable public page pointing at those broadcasts."
+    },
+    {
+      "id": "dreamland",
+      "authors": "Bob Lazar and George Knapp",
+      "year": 2019,
+      "title": "Dreamland: An Autobiography",
+      "container": "Interstellar",
+      "url": "https://en.wikipedia.org/wiki/Bob_Lazar",
+      "kind": "testimony",
+      "note": "Lazar's 2019 book, written with George Knapp."
+    },
+    {
+      "id": "lazar-film",
+      "authors": "Jeremy Corbell",
+      "year": 2018,
+      "title": "Bob Lazar: Area 51 & Flying Saucers",
+      "container": "Film",
+      "url": "https://www.imdb.com/title/tt7921548/",
+      "kind": "testimony",
+      "note": "2018 documentary. Frames from the film are not reproduced."
+    },
+    {
+      "id": "jre-1315",
+      "authors": "Bob Lazar, interviewed by Joe Rogan",
+      "year": 2019,
+      "title": "Joe Rogan Experience #1315",
+      "container": "PowerfulJRE",
+      "url": "https://www.youtube.com/watch?v=BEWz4SXfyCQ",
+      "kind": "testimony",
+      "note": "June 2019 interview."
+    },
+    {
+      "id": "lazar-accounts",
+      "authors": "Bob Lazar",
+      "year": 2019,
+      "title": "Lazar's public accounts of the Sport Model",
+      "container": "KLAS-TV 1989, Dreamland 2019, the 2018 film, and JRE #1315",
+      "url": "https://www.youtube.com/watch?v=BEWz4SXfyCQ",
+      "kind": "testimony",
+      "note": "Combined testimony source where a detail is repeated across those accounts. Figures he did not state stay estimated."
+    }
+  ]
+}

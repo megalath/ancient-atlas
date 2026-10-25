@@ -11,7 +11,9 @@ JSON Schema for the three files lives in `schema/`. `npm run validate` checks th
 | `schemaVersion` | yes | `1` |
 | `id` | yes | Same as the directory name |
 | `name` | yes | Name shown on the globe and in the heading |
-| `builder` | yes | `generic` for a site whose shapes are in `features.json`. `khufu` is reserved for the Great Pyramid survey reduction |
+| `builder` | yes | `generic` for a site whose shapes are in `features.json`. `landscape` for terrain, runways, and a separate craft scene. `khufu` is reserved for the Great Pyramid survey reduction |
+| `category` | no | `ancient` (the default) or `modern-mysteries`. The globe can filter on it |
+| `entryFeature` | no | Feature id framed when the globe flies down into the site. Every package still gets a marker, a search entry, and a fly-to from its `location` |
 | `catalogIssue` | yes | GitHub issue number for this monument, or `null` for Khufu only |
 | `wikipedia` | no | URL of the article |
 | `location.latitude`, `location.longitude` | generic sites | WGS84 decimal degrees. `0,0` is rejected |
@@ -54,8 +56,12 @@ One object per named part:
 | --- | --- |
 | `id` | Unique inside the site. Used in `?feature=` |
 | `name` | Label in the list and on the model |
-| `group` | `Exterior`, `Passages`, `Chambers`, `Shafts`, `Voids`, or `Intrusions` |
-| `layer` | `casing`, `core`, or `interior`. Interior picks stay available when the shell is translucent |
+| `group` | `Exterior`, `Passages`, `Chambers`, `Shafts`, `Voids`, `Intrusions`, `Terrain`, `Airfield`, `Installation`, `Craft`, or `Claims` |
+| `layer` | `casing`, `core`, `interior`, or a landscape layer: `terrain`, `airfield`, `buildings`, `boundary`, `s4`, `hull`, `craft-interior` |
+| `evidence` | `verified`, `testimony`, or `estimated`. Omitted means `verified`. A testimony or estimated feature cannot carry a verified fact. A verified fact cannot cite a testimony source. An estimated fact must say it is estimated |
+| `scene` | `monument`, `terrain`, or `sport-model`. `sport-model` opens the craft cutaway instead of the landscape |
+| `parent` | Optional feature id this part sits inside. The breadcrumb walks the chain back to the site and the globe |
+| `anchor` | Optional `{ "x", "z" }` in metres east and north. A feature with another `scene` is drawn at that point on the terrain, so it can be tapped there |
 | `accuracy` | `surveyed`, `reconstructed`, `projected`, or `schematic` |
 | `schematic` | `true` when a drawn number is not a published measurement |
 | `material` | `casing`, `core`, `passage`, `granite`, `bedrock`, `shaft`, `void`, `forced`, or `chevron` |
@@ -80,7 +86,7 @@ One object per named part:
 }
 ```
 
-`license` matches Creative Commons (`CC BY`, `CC BY-SA`, `CC0`) or `Public domain`. "Copyrighted free use" fails validation. `page` is the Commons file page. `file` is the copy served by the app. `wikimediaUrl` stays on `upload.wikimedia.org` so the original can be checked. The panel prints the title, author, and licence under the image.
+`license` matches Creative Commons (`CC BY`, `CC BY-SA`, `CC0`) or `Public domain`. "Copyrighted free use" fails validation. A Commons picture uses a Commons `page` and a `wikimediaUrl` on `upload.wikimedia.org`. An open-data picture (Sentinel-2, a CC0 diagram) uses an https provider page and a local `file`. The panel prints the title, author, and licence under the image.
 
 Prefer a photograph of the real feature and, where one exists, a section or diagram. Two or three images is the useful number.
 

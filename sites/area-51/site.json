@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "area-51",
+  "name": "Area 51, Groom Lake",
+  "builder": "landscape",
+  "category": "modern-mysteries",
+  "catalogIssue": 450,
+  "entryFeature": "groom-lake",
+  "wikipedia": "https://en.wikipedia.org/wiki/Area_51",
+  "location": {
+    "latitude": 37.233333333333334,
+    "longitude": -115.80833333333334
+  },
+  "orientation": {
+    "westOfNorthArcsec": 0
+  },
+  "scale": {
+    "unit": "m"
+  },
+  "terrain": {
+    "cols": 157,
+    "rows": 199,
+    "west": -115.96,
+    "south": 37.01,
+    "east": -115.7,
+    "north": 37.34,
+    "datumM": 1300,
+    "heights": "/sites/area-51/terrain/heights.i16",
+    "image": "/sites/area-51/images/sentinel-groom.jpg",
+    "imageWest": -115.96000671386719,
+    "imageSouth": 37.01000682730309,
+    "imageEast": -115.70002555847168,
+    "imageNorth": 37.340041255952045
+  },
+  "notes": "Origin is the Wikipedia airport reference point. Public NAIP does not cover this quadrangle in the Planetary Computer catalog. Imagery is Copernicus Sentinel-2 cloudless 2021 via EOX, CC BY 4.0. Elevation is SRTM1 public domain."
+}

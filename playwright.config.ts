@@ -12,6 +12,13 @@ export default defineConfig({
   use: {
     baseURL: "http://127.0.0.1:3000",
     trace: "retain-on-failure",
+    // Hosted runners report a GPU that leaves the canvas unreadably blank.
+    // Software WebGL is what the contrast check can actually sample.
+    launchOptions: {
+      args: process.env.CI
+        ? ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"]
+        : [],
+    },
   },
   webServer: {
     // CI builds first, then serves that build. The dev server's error overlay

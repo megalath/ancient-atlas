@@ -120,7 +120,7 @@ for (const id of ids) {
       const azimuth = dmsToDegrees(site.angles?.coleAzimuth?.[side]);
       if (azimuth === null) fail(`${id}: angles.coleAzimuth.${side} is not a DMS triple`);
     }
-  } else {
+  } else if (site.builder === "landscape" || site.builder === "generic") {
     const latitude = site.location?.latitude;
     const longitude = site.location?.longitude;
     if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
@@ -133,7 +133,14 @@ for (const id of ids) {
       fail(`${id}: orientation.westOfNorthArcsec must be a finite offset within half a turn`);
     }
     if (site.scale?.unit !== "m") fail(`${id}: scale.unit must be m`);
+  } else {
+    fail(`${id}: unknown builder ${site.builder}`);
   }
+
+  if (site.category !== undefined && !["ancient", "modern-mysteries"].includes(site.category)) {
+    fail(`${id}: category must be ancient or modern-mysteries`);
+  }
+  const category = site.category ?? "ancient";
 
   if (site.catalogIssue === null || site.catalogIssue === undefined) {
     if (site.builder !== "khufu") {
@@ -177,8 +184,47 @@ for (const id of ids) {
     for (const link of links) {
       if (link.sourceId && !sourceIds.has(link.sourceId)) fail(`${where}: link sourceId ${link.sourceId} is not in sources.json`);
     }
+    const featureEvidence = feature.evidence ?? "verified";
+    if (!["verified", "testimony", "estimated"].includes(featureEvidence)) {
+      fail(`${where}: evidence must be verified, testimony, or estimated`);
+    }
+    if (featureEvidence !== "verified" && category === "ancient") {
+      fail(`${where}: an ancient-site feature cannot be ${featureEvidence}. Testimony and estimates stay off the verified pyramid record.`);
+    }
+    if (featureEvidence === "testimony" && !/testimony/i.test(feature.description ?? "")) {
+      fail(`${where}: a testimony feature has to say that it is testimony`);
+    }
+    const sourceById = new Map((sourcesFile.sources ?? []).map((source) => [source.id, source]));
+    let citesRecord = false;
     for (const fact of feature.facts ?? []) {
       if (!sourceIds.has(fact.sourceId)) fail(`${where}: fact ${fact.label} cites missing source ${fact.sourceId}`);
+      const factEvidence = fact.evidence ?? "verified";
+      if (!["verified", "testimony", "estimated"].includes(factEvidence)) {
+        fail(`${where}: fact ${fact.label} has an unknown evidence label`);
+      }
+      if (featureEvidence !== "verified" && factEvidence === "verified") {
+        fail(`${where}: a ${featureEvidence} feature cannot present the fact "${fact.label}" as verified`);
+      }
+      if (factEvidence === "estimated" && !/estimated/i.test(fact.value ?? "")) {
+        fail(`${where}: estimated fact "${fact.label}" must say that the figure is estimated for visualization`);
+      }
+      const factSource = sourceById.get(fact.sourceId);
+      const factKind = factSource?.kind ?? "record";
+      if (factEvidence === "testimony" && factKind !== "testimony") {
+        fail(`${where}: testimony fact "${fact.label}" must cite a testimony source`);
+      }
+      if (factEvidence === "verified" && factKind === "testimony") {
+        fail(`${where}: verified fact "${fact.label}" cites a testimony source`);
+      }
+      if (factEvidence === "verified" && factKind === "record") citesRecord = true;
+    }
+    for (const link of links) {
+      if (!link.sourceId) continue;
+      const kind = sourceById.get(link.sourceId)?.kind ?? "record";
+      if (kind === "record") citesRecord = true;
+    }
+    if (featureEvidence === "verified" && !citesRecord) {
+      fail(`${where}: a verified feature needs a public-record source, not only testimony`);
     }
     if (!Array.isArray(feature.images) || feature.images.length === 0) {
       fail(`${where}: needs at least one openly licensed picture`);
@@ -193,11 +239,16 @@ for (const id of ids) {
       if (!image.author || !image.license || !image.page) {
         fail(`${where}: image ${image.id} needs author, license, and source page`);
       }
-      if (typeof image.page === "string" && !image.page.includes("commons.wikimedia.org")) {
-        fail(`${where}: image ${image.id} source page must be a Wikimedia Commons file page`);
+      const onCommons = typeof image.page === "string" && image.page.includes("commons.wikimedia.org");
+      if (onCommons) {
+        if (typeof image.wikimediaUrl !== "string" || !image.wikimediaUrl.startsWith("https://upload.wikimedia.org/")) {
+          fail(`${where}: image ${image.id} on Commons needs a wikimediaUrl on upload.wikimedia.org`);
+        }
+      } else if (typeof image.page !== "string" || !image.page.startsWith("https://")) {
+        fail(`${where}: image ${image.id} source page must be https (Commons, or the provider page for an open-data image)`);
       }
-      if (typeof image.wikimediaUrl === "string" && !image.wikimediaUrl.startsWith("https://upload.wikimedia.org/")) {
-        fail(`${where}: image ${image.id} wikimediaUrl must be an upload.wikimedia.org URL`);
+      if (!onCommons && !image.file) {
+        fail(`${where}: image ${image.id} needs a local file when it is not on Commons`);
       }
       if (!image.wikimediaUrl && !image.file) fail(`${where}: image ${image.id} needs a file or a wikimediaUrl`);
       if (typeof image.file === "string") {
@@ -208,12 +259,35 @@ for (const id of ids) {
         }
       }
     }
-    if (site.builder === "generic") {
+    if (site.builder === "generic" || site.builder === "landscape") {
       if (!Array.isArray(feature.geometry) || feature.geometry.length === 0) {
-        fail(`${where}: generic sites put metre geometry in an array on the feature`);
+        fail(`${where}: ${site.builder} sites put metre geometry in an array on the feature`);
       }
     } else if (!feature.geometry || feature.geometry.providedBy !== "builder") {
       fail(`${where}: Khufu geometry is computed by the builder. Set geometry.providedBy to "builder".`);
+    }
+  }
+  if (site.entryFeature && !seenFeatures.has(site.entryFeature)) {
+    fail(`${id}: entryFeature ${site.entryFeature} is not a feature in this package`);
+  }
+  const featureById = new Map((featuresFile.features ?? []).map((feature) => [feature.id, feature]));
+  for (const feature of featuresFile.features ?? []) {
+    if (!feature.parent && !feature.anchor) continue;
+    if (feature.parent && !seenFeatures.has(feature.parent)) {
+      fail(`${id}/${feature.id}: parent ${feature.parent} is not a feature in this package`);
+    }
+    const chain = new Set();
+    let cursor = feature;
+    while (cursor?.parent) {
+      if (chain.has(cursor.id)) {
+        fail(`${id}/${feature.id}: parent chain cycles`);
+        break;
+      }
+      chain.add(cursor.id);
+      cursor = featureById.get(cursor.parent);
+    }
+    if (feature.anchor && (!Number.isFinite(feature.anchor.x) || !Number.isFinite(feature.anchor.z))) {
+      fail(`${id}/${feature.id}: anchor needs finite east and north metres`);
     }
   }
 }

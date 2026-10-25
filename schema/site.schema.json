@@ -9,9 +9,11 @@
     "schemaVersion": { "enum": [1] },
     "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
     "name": { "type": "string", "minLength": 3 },
-    "builder": { "enum": ["khufu", "generic"] },
+    "builder": { "enum": ["khufu", "generic", "landscape"] },
+    "category": { "enum": ["ancient", "modern-mysteries"] },
     "wikipedia": { "type": "string" },
     "catalogIssue": { "type": ["integer", "null"], "minimum": 1 },
+    "entryFeature": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
     "location": {
       "type": "object",
       "additionalProperties": false,

@@ -17,12 +17,28 @@
         "properties": {
           "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
           "name": { "type": "string", "minLength": 2 },
-          "group": { "enum": ["Exterior", "Passages", "Chambers", "Shafts", "Voids", "Intrusions"] },
-          "layer": { "enum": ["casing", "core", "interior"] },
+          "group": {
+            "enum": ["Exterior", "Passages", "Chambers", "Shafts", "Voids", "Intrusions", "Airfield", "Terrain", "Installation", "Craft", "Claims"]
+          },
+          "layer": {
+            "enum": ["casing", "core", "interior", "terrain", "airfield", "buildings", "boundary", "s4", "hull", "craft-interior"]
+          },
           "accuracy": { "enum": ["surveyed", "reconstructed", "projected", "schematic"] },
+          "evidence": { "enum": ["verified", "testimony", "estimated"] },
+          "scene": { "enum": ["monument", "terrain", "sport-model"] },
+          "parent": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "anchor": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["x", "z"],
+            "properties": {
+              "x": { "type": "number" },
+              "z": { "type": "number" }
+            }
+          },
           "schematic": { "type": "boolean" },
           "material": {
-            "enum": ["casing", "core", "passage", "granite", "bedrock", "shaft", "void", "forced", "chevron"]
+            "enum": ["casing", "core", "passage", "granite", "bedrock", "shaft", "void", "forced", "chevron", "sand", "asphalt", "water", "metal", "reactor"]
           },
           "description": { "type": "string", "minLength": 1 },
           "links": {
@@ -67,7 +83,8 @@
                 "label": { "type": "string" },
                 "value": { "type": "string" },
                 "sourceId": { "type": "string" },
-                "locator": { "type": "string" }
+                "locator": { "type": "string" },
+                "evidence": { "enum": ["verified", "testimony", "estimated"] }
               }
             }
           },

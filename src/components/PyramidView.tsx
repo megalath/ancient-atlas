@@ -46,6 +46,11 @@ const COLORS: Record<MaterialId, string> = {
   void: "#e2b15c",
   forced: "#6b5344",
   chevron: "#f7f1e4",
+  sand: "#c4b496",
+  asphalt: "#4a4a48",
+  water: "#d5d0c4",
+  metal: "#8aa0a8",
+  reactor: "#d2a85a",
 };
 
 const LABELLED = new Set([
