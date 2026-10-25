@@ -73,6 +73,7 @@ export function LandscapeView(props: Props) {
       dpr={props.mobile ? [1, 1.25] : [1, 1.75]}
       onPointerMissed={() => props.onHover(null)}
     >
+      <MarkRendered />
       <color attach="background" args={[craft ? "#12161c" : "#c4b59a"]} />
       <ambientLight intensity={craft ? 0.7 : 0.85} />
       <directionalLight position={[4000, 6000, 2000]} intensity={1.35} />
@@ -93,6 +94,17 @@ export function LandscapeView(props: Props) {
       <GroundWalk {...props} heights={heights} craft={craft} />
     </Canvas>
   );
+}
+
+function MarkRendered() {
+  const gl = useThree((state) => state.gl);
+  const marked = useRef(false);
+  useFrame(() => {
+    if (marked.current) return;
+    marked.current = true;
+    gl.domElement.dataset.rendered = "true";
+  });
+  return null;
 }
 
 function useHeights(url: string | undefined) {

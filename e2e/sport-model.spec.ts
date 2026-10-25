@@ -47,6 +47,7 @@ test("Area 51 opens from the globe onto the lake", async ({ page }, testInfo) =>
   await expect(panel.getByRole("heading", { name: "Groom Lake" })).toBeVisible();
   await expect(panel.locator(".badge.verified").first()).toBeVisible();
   const canvas = page.locator(".stage canvas");
+  await expect(canvas).toHaveAttribute("data-rendered", "true");
   await expect.poll(async () => canvasContrast(canvas), { timeout: 15_000 }).toBeGreaterThan(12);
   await page.screenshot({ path: `${shots}/area-51-groom-${testInfo.project.name}.png` });
 });
