@@ -1,0 +1,13 @@
+land-ocean-ice-2048.jpg
+
+NASA Visible Earth / Blue Marble: land surface, ocean color, and sea ice.
+Equirectangular composite, 2048 × 1024.
+Public domain. U.S. government work (NASA).
+
+Stored copy retrieved from Wikimedia Commons file "Land ocean ice 2048.jpg"
+(https://commons.wikimedia.org/wiki/File:Land_ocean_ice_2048.jpg), which
+reproduces the NASA Blue Marble image.
+
+No other planet texture is shipped. The globe does not call a tile service
+and does not need an API key. Close-up detail at Giza is the local model,
+not this texture.

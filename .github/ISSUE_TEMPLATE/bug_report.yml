@@ -1,0 +1,37 @@
+name: Bug report
+description: Something in the viewer is broken, misleading, or out of place.
+title: "Bug: "
+labels: ["ui"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where
+      options:
+        - Globe
+        - Pyramid orbit
+        - Walk or stand
+        - Layers or section
+        - Info panel
+        - Build or tests
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps
+      description: Which preset, which feature, which browser.
+    validations:
+      required: false

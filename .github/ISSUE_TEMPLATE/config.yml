@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Validation notes
+    url: https://github.com/megalath/ancient-atlas/blob/main/VALIDATION.md
+    about: Read the tolerances and the known compromises before reporting a wrong measurement.
