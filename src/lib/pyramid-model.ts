@@ -1,8 +1,49 @@
-import datasetJson from "../../data/great-pyramid.json";
+import featureDocs from "../../sites/khufu/features.json";
+import siteFile from "../../sites/khufu/site.json";
+import sourceFile from "../../sites/khufu/sources.json";
 
-export const dataset = datasetJson;
+type MeasureKey = keyof typeof siteFile.measures;
 
-type MeasureKey = keyof typeof dataset.measures;
+export type AtlasLink = {
+  label: string;
+  url: string;
+  sourceId?: string;
+};
+
+export type Media = {
+  id: string;
+  featureIds: string[];
+  title: string;
+  url: string;
+  page: string;
+  author: string;
+  license: string;
+  licenseUrl?: string;
+  file?: string;
+};
+
+const docs = new Map(featureDocs.features.map((feature) => [feature.id, feature]));
+
+export const dataset = {
+  ...siteFile,
+  sources: sourceFile.sources,
+  media: featureDocs.features.flatMap((feature) =>
+    feature.images.map((image) => ({
+      id: `${feature.id}-${image.id}`,
+      featureIds: [feature.id],
+      title: image.title,
+      url: image.wikimediaUrl,
+      page: image.page,
+      author: image.author,
+      license: image.license,
+      licenseUrl: image.licenseUrl,
+    })),
+  ),
+  summaries: Object.fromEntries(featureDocs.features.map((feature) => [feature.id, feature.description])) as Record<
+    string,
+    string
+  >,
+};
 
 export type Vec3 = { x: number; y: number; z: number };
 
@@ -66,8 +107,6 @@ export type Fact = {
   locator?: string;
 };
 
-export type Media = (typeof dataset.media)[number];
-
 export type BuiltFeature = {
   id: string;
   name: string;
@@ -77,11 +116,22 @@ export type BuiltFeature = {
   schematic: boolean;
   material: MaterialId;
   summary: string;
+  description: string;
+  links: AtlasLink[];
   facts: Fact[];
   images: Media[];
   sourceIds: string[];
   shapes: Shape[];
   meta: Record<string, number>;
+};
+
+export type SceneModel = {
+  baseM: number;
+  heightM: number;
+  currentHeightM: number;
+  orientationWestArcsec: number;
+  entrance: Vec3;
+  features: BuiltFeature[];
 };
 
 export type PyramidModel = {
@@ -106,10 +156,10 @@ export type PyramidModel = {
   features: BuiltFeature[];
 };
 
-const IN = dataset.frame.inchToMetre;
+const IN = siteFile.frame.inchToMetre;
 
 function measure(id: MeasureKey) {
-  return dataset.measures[id];
+  return siteFile.measures[id];
 }
 
 function mv(id: MeasureKey): number {
@@ -275,14 +325,42 @@ export function formatDms(degrees: number): string {
   return `${sign}${d}°${String(m).padStart(2, "0")}′${String(s).padStart(2, "0")}″`;
 }
 
-function mediaFor(id: string): Media[] {
-  return dataset.media.filter((item) => item.featureIds.includes(id));
+function imagesFor(id: string): Media[] {
+  const doc = docs.get(id);
+  if (!doc) return [];
+  return doc.images.map((image) => ({
+    id: image.id,
+    featureIds: [id],
+    title: image.title,
+    url: image.file,
+    page: image.page,
+    author: image.author,
+    license: image.license,
+    licenseUrl: image.licenseUrl,
+    file: image.file,
+  }));
 }
 
-function feature(input: Omit<BuiltFeature, "images" | "sourceIds" | "summary"> & { summary?: string }): BuiltFeature {
-  const summary = input.summary ?? dataset.summaries[input.id as keyof typeof dataset.summaries] ?? input.name;
-  const sourceIds = Array.from(new Set(input.facts.map((item) => item.sourceId)));
-  return { ...input, summary, images: mediaFor(input.id), sourceIds };
+function feature(input: Omit<BuiltFeature, "images" | "sourceIds" | "summary" | "description" | "links"> & { summary?: string }): BuiltFeature {
+  const doc = docs.get(input.id);
+  const description = doc?.description ?? input.summary ?? dataset.summaries[input.id] ?? input.name;
+  const links = (doc?.links ?? []).map((link) => ({
+    label: link.label,
+    url: link.url,
+    sourceId: "sourceId" in link ? link.sourceId : undefined,
+  }));
+  const sourceIds = Array.from(
+    new Set([...input.facts.map((item) => item.sourceId), ...links.flatMap((link) => (link.sourceId ? [link.sourceId] : []))]),
+  );
+  return {
+    ...input,
+    name: doc?.name ?? input.name,
+    summary: description,
+    description,
+    images: imagesFor(input.id),
+    links,
+    sourceIds,
+  };
 }
 
 function coleMeanBase(): number {

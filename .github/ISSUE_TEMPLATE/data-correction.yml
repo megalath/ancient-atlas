@@ -7,7 +7,7 @@ body:
     id: feature
     attributes:
       label: Feature id
-      description: The id in data/great-pyramid.json, for example kings-chamber or north-face-corridor.
+      description: The feature id in sites/<site-id>/features.json, for example kings-chamber or north-face-corridor.
       placeholder: queens-chamber
     validations:
       required: true

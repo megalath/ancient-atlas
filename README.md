@@ -11,7 +11,8 @@ The aim is the one a surveyor would recognise. Placement, orientation, scale and
 - Open the Earth and fly from space down to Giza, then step into the pyramid. The globe is a local copy of NASA's Blue Marble. It does not call a tile service and it does not need an API key.
 - At the pyramid, drag to orbit. **Walk the ground** uses the mouse and WASD on the pavement, and stops at the casing. **Stand here** puts you inside a chamber. Walking the passages themselves is still to be built.
 - Turn layers on and off: original casing, core masonry, interior, measurements, annotations, and a section plane that cuts the shell on the east side of the passages.
-- Click any feature. The panel gives the measure, the citation, and a public-domain or Creative Commons picture where one is on file.
+- Click or tap any named feature, or pick it from the list. The panel gives a description, the measures with citations, openly licensed pictures, and further reading. The address bar keeps a link such as `?site=khufu&feature=grand-gallery`.
+- On a phone the same controls sit in a bottom sheet. One finger orbits, a pinch zooms, and two fingers pan. Walk mode uses an on-screen joystick or a tap on the ground.
 
 One unit in the pyramid scene is one metre.
 
@@ -26,7 +27,7 @@ Then open [http://localhost:3000](http://localhost:3000).
 
 ```bash
 npm test          # geometry checked against the published figures
-npm run validate  # the same tests
+npm run validate  # site packages: schema, citations, pictures, coordinates
 npm run build     # production build
 npm start
 ```
@@ -43,7 +44,7 @@ The Earth texture is NASA Visible Earth / Blue Marble, 2048×1024, public domain
 
 ## The data
 
-`data/great-pyramid.json` is the ledger. Every dimension the mesh uses is a measure in that file, with a source id and a locator. The builder in `src/lib/pyramid-model.ts` does not invent a second set of numbers.
+Khufu is a site package under `sites/khufu/`: `site.json` is the survey ledger, `features.json` is the text, pictures, and links for each named part, and `sources.json` is the bibliography. Every dimension the mesh uses is a measure in `site.json`, with a source id and a locator. The builder in `src/lib/pyramid-model.ts` does not invent a second set of numbers. Another monument is added as its own folder. See [CONTRIBUTING.md](CONTRIBUTING.md) and [docs/DATA_FORMAT.md](docs/DATA_FORMAT.md).
 
 The surveys behind v1:
 

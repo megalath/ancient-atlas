@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ancient-atlas.dev/schema/site.schema.json",
+  "title": "Atlas site",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schemaVersion", "id", "name", "builder", "catalogIssue"],
+  "properties": {
+    "schemaVersion": { "enum": [1] },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "name": { "type": "string", "minLength": 3 },
+    "builder": { "enum": ["khufu", "generic"] },
+    "wikipedia": { "type": "string" },
+    "catalogIssue": { "type": ["integer", "null"], "minimum": 1 },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["latitude", "longitude"],
+      "properties": {
+        "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
+        "longitude": { "type": "number", "minimum": -180, "maximum": 180 }
+      }
+    },
+    "orientation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["westOfNorthArcsec"],
+      "properties": {
+        "westOfNorthArcsec": { "type": "number" }
+      }
+    },
+    "scale": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["unit"],
+      "properties": {
+        "unit": { "enum": ["m"] },
+        "inchToMetre": { "type": "number" }
+      }
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "inchToMetre": { "type": "number" }
+      }
+    }
+  }
+}
