@@ -1,0 +1,40 @@
+name: Add a site
+description: Build a monument from the master index as a site package.
+title: "Site: "
+labels: ["data"]
+body:
+  - type: input
+    id: catalog
+    attributes:
+      label: Catalog issue
+      description: The issue number from the pinned master index (issue 448). This becomes catalogIssue in site.json.
+      placeholder: "28"
+    validations:
+      required: true
+  - type: input
+    id: site-id
+    attributes:
+      label: Site id
+      description: Lowercase directory name, such as menkaure. Scaffold it with npm run new-site -- <id>.
+      placeholder: menkaure
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Surveys you will cite
+      description: Author, title, year, and a URL. A coordinate needs a source too. Wikipedia alone is not a source for a length.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: Leave this as it is. It is the bar for the pull request.
+      value: |
+        - sites/<id>/site.json, features.json, and sources.json validate with npm run validate.
+        - Every feature has a few sentences of description, dimensions with citations, at least one CC or public-domain picture with author and licence, and Read more links (Wikipedia plus the scholarly source).
+        - npm test and npm run build pass.
+        - The pull request includes desktop and mobile screenshots of a feature panel and ends with Closes #<catalog issue>.
+    validations:
+      required: true

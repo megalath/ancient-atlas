@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "petrie1883",
+      "authors": "W. M. Flinders Petrie",
+      "year": 1883,
+      "title": "The Pyramids and Temples of Gizeh",
+      "container": "Field & Tuer, London",
+      "url": "https://www.ronaldbirdsall.com/gizeh/petrie/index.htm",
+      "note": "Primary survey of the casing, the passages, and the chambers. Interior positions below are his steel-tape and theodolite figures."
+    },
+    {
+      "id": "cole1925",
+      "authors": "J. H. Cole",
+      "year": 1925,
+      "title": "Determination of the Exact Size and Orientation of the Great Pyramid of Giza",
+      "container": "Survey of Egypt Paper No. 39, Government Press, Cairo",
+      "url": "http://library.pyramidal-foundational-information.com/books/Cole%20-%20Determination%20of%20the%20Exact%20Size%20and%20Orientation%20of%20the%20Great%20Pyramid%20of%20Giza.pdf",
+      "note": "Invar-wire survey of the casing foot on the pavement. Chosen for the base lengths and the side azimuths."
+    },
+    {
+      "id": "dash2018",
+      "authors": "Glen Dash",
+      "year": 2018,
+      "title": "Where in the World Is the Great Pyramid?",
+      "container": "AERAGRAM, Spring 2018, Ancient Egypt Research Associates",
+      "url": "http://www.dashfoundation.org/downloads/archaeology/as-published/G1-Climb.pdf",
+      "note": "WGS84 coordinates of Survey of Egypt station E1 and of the mast on the summit, and the GPMP grid offsets from the base centre."
+    },
+    {
+      "id": "dash2015",
+      "authors": "Glen Dash",
+      "year": 2015,
+      "title": "The Great Pyramid's Footprint: Results from Our 2015 Survey",
+      "container": "AERAGRAM 16-2",
+      "url": "http://www.dashfoundation.org/Surveys-at-Giza.htm",
+      "note": "Later casing-foot survey. The full corner table is not transcribed in v1; the mean side Dash quotes (755 ft 9 in) is recorded as a candidate."
+    },
+    {
+      "id": "lehner1997",
+      "authors": "Mark Lehner",
+      "year": 1997,
+      "title": "The Complete Pyramids",
+      "container": "Thames & Hudson, London",
+      "url": "https://archive.org/details/completepyramids0000lehn",
+      "note": "Synthesis of the Giza complex. Cited for the identity of the interior system. Dimensional choices prefer Petrie, Cole, and the muon papers where they give numbers."
+    },
+    {
+      "id": "scanpyramids2017",
+      "authors": "Kunihiro Morishima, M. Tayoubi, et al.",
+      "year": 2017,
+      "title": "Discovery of a big void in Khufu's Pyramid by observation of cosmic-ray muons",
+      "container": "Nature 552, 386–390",
+      "url": "https://doi.org/10.1038/nature24647",
+      "note": "Big Void: at least 30 m long, cross-section similar to the Grand Gallery, above the Grand Gallery, 40–50 m from the Queen's Chamber detectors. No numeric centreline is published."
+    },
+    {
+      "id": "scanpyramids2023",
+      "authors": "Sébastien Procureur, Kunihiro Morishima, et al.",
+      "year": 2023,
+      "title": "Precise characterization of a corridor-shaped structure in Khufu's Pyramid by observation of cosmic-ray muons",
+      "container": "Nature Communications 14, 1144",
+      "url": "https://doi.org/10.1038/s41467-023-36351-0",
+      "note": "North Face Corridor dimensions and the standing pyramid described as 139 m high and 230 m wide."
+    },
+    {
+      "id": "vyse1840",
+      "authors": "Richard William Howard Vyse and John Shae Perring",
+      "year": 1840,
+      "title": "Operations Carried On at the Pyramids of Gizeh in 1837",
+      "container": "London",
+      "url": "https://archive.org/details/operationscarrie01vyse",
+      "note": "Discovery of the upper relieving chambers. Petrie quotes Vyse for the apex of those chambers near 2,525 inches above the pavement."
+    }
+  ]
+}

@@ -1,6 +1,7 @@
+import fs from "node:fs";
+import featureDocs from "../sites/khufu/features.json";
 import { Vector3 } from "three";
 import { describe, expect, it } from "vitest";
-import dataset from "../data/great-pyramid.json";
 import {
   buildCorbelGeometry,
   floorPlumbHeight,
@@ -13,6 +14,7 @@ import {
   buildPyramidModel,
   casingHalfWidth,
   coleOrientationWestArcsec,
+  dataset,
   featureById,
   insideOriginalPyramid,
   moveMetres,
@@ -323,6 +325,31 @@ describe("the ledger behind the mesh", () => {
       for (const sourceId of feature.sourceIds) expect(sourceIds.has(sourceId)).toBe(true);
     }
     for (const measure of Object.values(dataset.measures)) expect(sourceIds.has(measure.sourceId)).toBe(true);
+  });
+
+  it("shows a description, a licensed picture, and a source for every feature", () => {
+    for (const feature of model.features) {
+      const sentences = feature.description.split(/[.!?]/).filter((part) => part.trim().length > 20);
+      expect(sentences.length).toBeGreaterThan(1);
+      expect(feature.description.length).toBeGreaterThan(180);
+      expect(feature.links.some((link) => link.url.startsWith("https://"))).toBe(true);
+      expect(feature.images.length).toBeGreaterThan(0);
+      for (const image of feature.images) {
+        expect(image.author.length).toBeGreaterThan(1);
+        expect(image.license).toMatch(/CC |CC0|public domain/i);
+        expect(image.license.toLowerCase()).not.toContain("copyrighted free use");
+        expect(image.page).toContain("commons.wikimedia.org");
+        expect(image.file?.startsWith("/sites/khufu/images/")).toBe(true);
+        expect(image.url).toBe(image.file);
+        expect(image.url).not.toContain("wikimedia.org");
+        expect(fs.existsSync(`public${image.file}`)).toBe(true);
+      }
+    }
+    expect(featureById(model, "grand-gallery").description.toLowerCase()).toContain("corbel");
+    expect(featureById(model, "grand-gallery").images.length).toBeGreaterThan(1);
+    const documented = featureDocs.features.map((feature) => feature.id).sort();
+    const built = model.features.map((feature) => feature.id).sort();
+    expect(built).toEqual(documented);
   });
 
   it("marks the unsurveyed reconstructions and keeps the photographs openly licensed", () => {

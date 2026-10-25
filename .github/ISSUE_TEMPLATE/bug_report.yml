@@ -25,6 +25,7 @@ body:
         - Walk or stand
         - Layers or section
         - Info panel
+        - Phone or tablet
         - Build or tests
     validations:
       required: true

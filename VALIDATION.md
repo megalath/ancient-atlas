@@ -1,12 +1,13 @@
 # Validation
 
-The mesh is not the authority. `data/great-pyramid.json` is. `src/lib/pyramid-model.ts` turns that ledger into geometry, and `tests/pyramid-model.test.ts` checks the geometry against numbers written out in the test file. A wrong edit to the JSON fails the tests. Run them with:
+The mesh is not the authority. The Khufu ledger is `sites/khufu/site.json`. `src/lib/pyramid-model.ts` turns that ledger into geometry, and `tests/pyramid-model.test.ts` checks the geometry against numbers written out in the test file. A wrong edit to the JSON fails the tests. Run them with:
 
 ```bash
 npm test
+npm run validate
 ```
 
-`npm run validate` is the same command. Tolerances below are the ones the tests enforce.
+`npm test` is the geometry suite. `npm run validate` checks every site package against the schemas in `schema/`: citations, coordinates, orientation, units, unique ids, pictures, and catalog issue numbers. Tolerances below are the ones the geometry tests enforce.
 
 ## Frame
 

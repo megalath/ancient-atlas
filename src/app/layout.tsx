@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
@@ -14,6 +14,12 @@ const sans = Source_Sans_3({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export const metadata: Metadata = {
   title: "Ancient Atlas — Great Pyramid of Khufu",
   description:
@@ -23,6 +29,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" as="image" href="/sites/khufu/images/gallery-adler.jpg" fetchPriority="high" />
+      </head>
       <body className={`${display.variable} ${sans.variable}`}>{children}</body>
     </html>
   );

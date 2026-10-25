@@ -24,6 +24,6 @@ body:
     id: sources
     attributes:
       label: Sources, if this is a reconstruction
-      description: A new monument needs a survey or a paper the way the Great Pyramid does. Name it if you have it.
+      description: A new monument is a site package. Name the survey or paper, then follow CONTRIBUTING.md.
     validations:
       required: false

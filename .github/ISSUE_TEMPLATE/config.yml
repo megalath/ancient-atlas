@@ -3,3 +3,6 @@ contact_links:
   - name: Validation notes
     url: https://github.com/megalath/ancient-atlas/blob/main/VALIDATION.md
     about: Read the tolerances and the known compromises before reporting a wrong measurement.
+  - name: Add a site
+    url: https://github.com/megalath/ancient-atlas/blob/main/CONTRIBUTING.md
+    about: The step-by-step recipe for a new monument is in CONTRIBUTING.md.

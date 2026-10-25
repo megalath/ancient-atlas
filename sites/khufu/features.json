@@ -1,0 +1,1837 @@
+{
+  "schemaVersion": 1,
+  "features": [
+    {
+      "id": "original-casing",
+      "name": "Original casing",
+      "group": "Exterior",
+      "layer": "casing",
+      "accuracy": "reconstructed",
+      "schematic": false,
+      "material": "casing",
+      "description": "The finished pyramid was a shell of fine Tura limestone over a core of local stone. Almost all of that casing is gone, so the white pyramid drawn here is a reconstruction: Cole's mean base of 230.364 m and Petrie's measured face angle of 51°52′, which together fix the original height at 146.721 m. Cole's four sides are not equal — they differ by up to 0.20 m — and the mesh uses their mean rather than four unequal faces. Petrie's own height, 5,776 ± 7 inches, sits 11 mm below the height drawn, inside his tolerance. The seked of 5½ palms (51°50′34″) is recorded for comparison and is not the slope that was built.",
+      "links": [
+        {
+          "label": "Wikipedia: exterior",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Exterior"
+        },
+        {
+          "label": "Cole 1925",
+          "url": "http://library.pyramidal-foundational-information.com/books/Cole%20-%20Determination%20of%20the%20Exact%20Size%20and%20Orientation%20of%20the%20Great%20Pyramid%20of%20Giza.pdf",
+          "sourceId": "cole1925"
+        },
+        {
+          "label": "Petrie 1883",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/index.htm",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "nina-exterior",
+          "title": "The Great Pyramid from the south-west",
+          "file": "/sites/khufu/images/nina-exterior.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/960px-Kheops-Pyramid.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-Pyramid.jpg",
+          "author": "Nina",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        },
+        {
+          "id": "liberato-plateau",
+          "title": "The three pyramids at Giza",
+          "file": "/sites/khufu/images/liberato-plateau.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/All_Gizah_Pyramids.jpg/960px-All_Gizah_Pyramids.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:All_Gizah_Pyramids.jpg",
+          "author": "Ricardo Liberato",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+        },
+        {
+          "id": "werner-core",
+          "title": "The core masonry as it stands",
+          "file": "/sites/khufu/images/werner-core.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Gizeh_Cheops_BW_1.jpg/960px-Gizeh_Cheops_BW_1.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Gizeh_Cheops_BW_1.jpg",
+          "author": "Berthold Werner",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "core-masonry",
+      "name": "Core masonry, as it stands",
+      "group": "Exterior",
+      "layer": "core",
+      "accuracy": "reconstructed",
+      "schematic": false,
+      "material": "core",
+      "description": "What visitors see today is the stepped core, left after the casing and the capstone were stripped. Petrie measured the mean core plane at 9,001.5 inches. The top is drawn at 138.5 m. Procureur and colleagues in 2023 describe the standing pyramid as 139 m high, which is a rounded figure, so the mesh uses the bottom of that rounding. The 36 steps are a visual envelope. Petrie and later climbers counted about 200 real courses, and those individual course heights are not drawn.",
+      "links": [
+        {
+          "label": "Wikipedia: the pyramid today",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Exterior"
+        },
+        {
+          "label": "Petrie 1883",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/index.htm",
+          "sourceId": "petrie1883"
+        },
+        {
+          "label": "Procureur et al. 2023",
+          "url": "https://doi.org/10.1038/s41467-023-36351-0",
+          "sourceId": "scanpyramids2023"
+        }
+      ],
+      "images": [
+        {
+          "id": "werner-core",
+          "title": "The core masonry as it stands",
+          "file": "/sites/khufu/images/werner-core.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Gizeh_Cheops_BW_1.jpg/960px-Gizeh_Cheops_BW_1.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Gizeh_Cheops_BW_1.jpg",
+          "author": "Berthold Werner",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "id": "base-climb",
+          "title": "The base of the Great Pyramid",
+          "file": "/sites/khufu/images/base-climb.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Base_of_Great_Pyramid_of_Giza.JPG/960px-Base_of_Great_Pyramid_of_Giza.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Base_of_Great_Pyramid_of_Giza.JPG",
+          "author": "MusikAnimal",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "id": "nina-exterior",
+          "title": "The Great Pyramid from the south-west",
+          "file": "/sites/khufu/images/nina-exterior.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/960px-Kheops-Pyramid.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-Pyramid.jpg",
+          "author": "Nina",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "casing-remnant-north",
+      "name": "North casing still in place",
+      "group": "Exterior",
+      "layer": "core",
+      "accuracy": "surveyed",
+      "schematic": true,
+      "material": "casing",
+      "description": "A run of the original casing is still in place along the foot of the north face, on the pavement. Cole measured that surviving stretch at 20 m. The height of the block drawn here, 1.5 m, is only a stand-in for the lowest course. It is marked schematic because the length is surveyed and the height is not. The stones show the fine jointing and the face angle that the lost casing once carried up the whole pyramid.",
+      "links": [
+        {
+          "label": "Wikipedia: casing",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Exterior"
+        },
+        {
+          "label": "Cole 1925",
+          "url": "http://library.pyramidal-foundational-information.com/books/Cole%20-%20Determination%20of%20the%20Exact%20Size%20and%20Orientation%20of%20the%20Great%20Pyramid%20of%20Giza.pdf",
+          "sourceId": "cole1925"
+        }
+      ],
+      "images": [
+        {
+          "id": "casing-detail",
+          "title": "Casing stones still at the foot of the pyramid",
+          "file": "/sites/khufu/images/casing-detail.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Dettaglio_della_piramide_di_Cheope_%28Giza_2002%29.jpg/960px-Dettaglio_della_piramide_di_Cheope_%28Giza_2002%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Dettaglio_della_piramide_di_Cheope_(Giza_2002).jpg",
+          "author": "Piergiorgio Rossi",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "base-climb",
+          "title": "The base of the Great Pyramid",
+          "file": "/sites/khufu/images/base-climb.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Base_of_Great_Pyramid_of_Giza.JPG/960px-Base_of_Great_Pyramid_of_Giza.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Base_of_Great_Pyramid_of_Giza.JPG",
+          "author": "MusikAnimal",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "id": "werner-core",
+          "title": "The core masonry as it stands",
+          "file": "/sites/khufu/images/werner-core.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Gizeh_Cheops_BW_1.jpg/960px-Gizeh_Cheops_BW_1.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Gizeh_Cheops_BW_1.jpg",
+          "author": "Berthold Werner",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "pavement",
+      "name": "Pavement",
+      "group": "Exterior",
+      "layer": "casing",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "casing",
+      "description": "The builders levelled a pavement and set the casing on it, leaving a margin of bare pavement outside the foot. Cole found that margin about 38 cm wide on the west, 42 cm on the north and 48 cm on the east. The mesh uses 0.42 m all round and treats the pavement as flat. A rock knoll buried inside the masonry is not modelled, and there is no terrain beyond the pavement.",
+      "links": [
+        {
+          "label": "Wikipedia: construction",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Exterior"
+        },
+        {
+          "label": "Cole 1925",
+          "url": "http://library.pyramidal-foundational-information.com/books/Cole%20-%20Determination%20of%20the%20Exact%20Size%20and%20Orientation%20of%20the%20Great%20Pyramid%20of%20Giza.pdf",
+          "sourceId": "cole1925"
+        }
+      ],
+      "images": [
+        {
+          "id": "base-climb",
+          "title": "The base of the Great Pyramid",
+          "file": "/sites/khufu/images/base-climb.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Base_of_Great_Pyramid_of_Giza.JPG/960px-Base_of_Great_Pyramid_of_Giza.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Base_of_Great_Pyramid_of_Giza.JPG",
+          "author": "MusikAnimal",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "id": "casing-detail",
+          "title": "Casing stones still at the foot of the pyramid",
+          "file": "/sites/khufu/images/casing-detail.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Dettaglio_della_piramide_di_Cheope_%28Giza_2002%29.jpg/960px-Dettaglio_della_piramide_di_Cheope_%28Giza_2002%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Dettaglio_della_piramide_di_Cheope_(Giza_2002).jpg",
+          "author": "Piergiorgio Rossi",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "descending-passage",
+      "name": "Original entrance and Descending Passage",
+      "group": "Passages",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "passage",
+      "description": "The original doorway is on the north face, 287 inches (7.29 m) east of the centre and 668.2 inches (16.97 m) above the pavement. From there a passage about 41.6 inches wide and 47.3 inches high descends south at 26°31′23″, through the masonry and on into the bedrock. Petrie put the south end of the floor 1,181 inches below the pavement, 306 inches north of the centre. The tourist entrance is lower down and is a different tunnel. This passage is the one the builders closed.",
+      "links": [
+        {
+          "label": "Wikipedia: interior",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Interior"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        },
+        {
+          "label": "Procureur et al. 2023",
+          "url": "https://doi.org/10.1038/s41467-023-36351-0",
+          "sourceId": "scanpyramids2023"
+        }
+      ],
+      "images": [
+        {
+          "id": "entrance-original",
+          "title": "The original entrance above the opening used today",
+          "file": "/sites/khufu/images/entrance-original.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Flickr_-_archer10_%28Dennis%29_-_Egypt-12B-071.jpg/960px-Flickr_-_archer10_%28Dennis%29_-_Egypt-12B-071.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Flickr_-_archer10_(Dennis)_-_Egypt-12B-071.jpg",
+          "author": "Dennis G. Jarvis",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+        },
+        {
+          "id": "section-procureur",
+          "title": "East–west cut marking the chambers and the descending corridor",
+          "file": "/sites/khufu/images/section-procureur.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "page": "https://commons.wikimedia.org/wiki/File:East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "author": "Procureur, Morishima et al.",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+        },
+        {
+          "id": "section-eb1911",
+          "title": "Petrie's section of the Great Pyramid, 1911",
+          "file": "/sites/khufu/images/section-eb1911.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/EB1911_Pyramid_-_Section_of_Great_Pyramid.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:EB1911_Pyramid_-_Section_of_Great_Pyramid.jpg",
+          "author": "W. M. Flinders Petrie",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "subterranean-passage",
+      "name": "Passage to the Subterranean Chamber",
+      "group": "Passages",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "bedrock",
+      "description": "A low horizontal passage leaves the foot of the descending passage and runs south into the unfinished chamber cut in the bedrock. It is rock-cut and irregular. The box drawn here is Petrie's mean width and height, not a smoothed architectural section. The floor is the continuation of the descending passage's south end, about 30 m below the pavement.",
+      "links": [
+        {
+          "label": "Wikipedia: Subterranean Chamber",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Subterranean_chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "section-procureur",
+          "title": "East–west cut marking the chambers and the descending corridor",
+          "file": "/sites/khufu/images/section-procureur.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "page": "https://commons.wikimedia.org/wiki/File:East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "author": "Procureur, Morishima et al.",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+        },
+        {
+          "id": "sub-plan",
+          "title": "Plan of the Subterranean Chamber, 1910",
+          "file": "/sites/khufu/images/sub-plan.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/23_edgar-plan.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:23_edgar-plan.jpg",
+          "author": "John and Morton Edgar",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "section-monnier",
+          "title": "North–south section of the pyramid",
+          "file": "/sites/khufu/images/section-monnier.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Kheops-coupe.svg/960px-Kheops-coupe.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-coupe.svg",
+          "author": "Franck Monnier, vectorised from his drawing",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "subterranean-chamber",
+      "name": "Subterranean Chamber",
+      "group": "Chambers",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "bedrock",
+      "description": "The Subterranean Chamber, sometimes called the Pit, is cut in the bedrock and was never finished. Petrie found the roof the most regular surface, 1,056 inches below the pavement. The north wall is 40 inches south of the pyramid's centre and the south wall 366 inches south. The floor is quarry-trenched, and at the west it rises to within about 25 cm of the roof. The volume drawn uses the eastern floor, which he measured 140 inches below the roof. A side recess in the west wall is omitted.",
+      "links": [
+        {
+          "label": "Wikipedia: Subterranean Chamber",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Subterranean_chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "sub-plan",
+          "title": "Plan of the Subterranean Chamber, 1910",
+          "file": "/sites/khufu/images/sub-plan.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/23_edgar-plan.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:23_edgar-plan.jpg",
+          "author": "John and Morton Edgar",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "section-procureur",
+          "title": "East–west cut marking the chambers and the descending corridor",
+          "file": "/sites/khufu/images/section-procureur.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "page": "https://commons.wikimedia.org/wiki/File:East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "author": "Procureur, Morishima et al.",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+        },
+        {
+          "id": "section-eb1911",
+          "title": "Petrie's section of the Great Pyramid, 1911",
+          "file": "/sites/khufu/images/section-eb1911.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/EB1911_Pyramid_-_Section_of_Great_Pyramid.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:EB1911_Pyramid_-_Section_of_Great_Pyramid.jpg",
+          "author": "W. M. Flinders Petrie",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "subterranean-south-passage",
+      "name": "South drift from the Subterranean Chamber",
+      "group": "Passages",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "bedrock",
+      "description": "A rough dead-end drift continues south from the Subterranean Chamber. Petrie read it as a first working passage, meant to be enlarged and then abandoned. The end is his measured distance south of the pyramid's centre. The box is the mean of a winding cut, so the walls in the mesh are straighter than the rock. Nothing of this drift has been opened to the outside.",
+      "links": [
+        {
+          "label": "Wikipedia: Subterranean Chamber",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Subterranean_chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "sub-plan",
+          "title": "Plan of the Subterranean Chamber, 1910",
+          "file": "/sites/khufu/images/sub-plan.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/23_edgar-plan.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:23_edgar-plan.jpg",
+          "author": "John and Morton Edgar",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "section-monnier",
+          "title": "North–south section of the pyramid",
+          "file": "/sites/khufu/images/section-monnier.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Kheops-coupe.svg/960px-Kheops-coupe.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-coupe.svg",
+          "author": "Franck Monnier, vectorised from his drawing",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "ascending-passage",
+      "name": "Ascending Passage",
+      "group": "Passages",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "passage",
+      "description": "Where the floor of the descending passage is 1,110.64 inches from the original doorway, the ascending passage branches upward to the south. Petrie gives its slope length to the Grand Gallery door as 1,546.8 inches. The upper end, the threshold of the gallery, is 852.6 inches above the pavement, 1,626.8 inches north of the centre and 287 inches east of it. Three granite plugs still close the lower end. The passage section is the same order as the descending passage, about 41.6 by 47.3 inches.",
+      "links": [
+        {
+          "label": "Wikipedia: interior",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Interior"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "asc-popo",
+          "title": "The ascending passage",
+          "file": "/sites/khufu/images/asc-popo.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Kheops_galerie_ascendante.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops_galerie_ascendante.JPG",
+          "author": "Popo le Chien",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self"
+        },
+        {
+          "id": "junction-edgar",
+          "title": "Where the Grand Gallery branches, 1910",
+          "file": "/sites/khufu/images/junction-edgar.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/10_edgar.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:10_edgar.jpg",
+          "author": "John and Morton Edgar",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "section-monnier",
+          "title": "North–south section of the pyramid",
+          "file": "/sites/khufu/images/section-monnier.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Kheops-coupe.svg/960px-Kheops-coupe.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-coupe.svg",
+          "author": "Franck Monnier, vectorised from his drawing",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "granite-plugs",
+      "name": "Granite plugs",
+      "group": "Passages",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "granite",
+      "description": "Three granite blocks, and originally more, were slid down the ascending passage to seal it after the burial. Petrie measured the lower end 74.2 inches up the floor from the junction with the descending passage, and he estimated the ancient top of the plugs at 277 inches from that junction. They are narrower at the bottom, 38.2 inches, so they wedge in the contracted mouth. Al-Ma'mun's workmen could not shift them and tunnelled around them through the softer limestone. The photograph shows the ascending passage they block, not a close view of the granite itself.",
+      "links": [
+        {
+          "label": "Wikipedia: interior",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Interior"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "asc-popo",
+          "title": "The ascending passage",
+          "file": "/sites/khufu/images/asc-popo.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Kheops_galerie_ascendante.JPG",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops_galerie_ascendante.JPG",
+          "author": "Popo le Chien",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self"
+        },
+        {
+          "id": "junction-edgar",
+          "title": "Where the Grand Gallery branches, 1910",
+          "file": "/sites/khufu/images/junction-edgar.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/10_edgar.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:10_edgar.jpg",
+          "author": "John and Morton Edgar",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "section-eb1911",
+          "title": "Petrie's section of the Great Pyramid, 1911",
+          "file": "/sites/khufu/images/section-eb1911.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/EB1911_Pyramid_-_Section_of_Great_Pyramid.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:EB1911_Pyramid_-_Section_of_Great_Pyramid.jpg",
+          "author": "W. M. Flinders Petrie",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "queens-passage",
+      "name": "Passage to the Queen's Chamber",
+      "group": "Passages",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "passage",
+      "description": "From the foot of the Grand Gallery a horizontal passage runs south to the Queen's Chamber. Petrie levelled the flat floor at 858.4 inches. Near the chamber the floor drops, from 854.6 inches at the step to 834.9 inches beyond it, so the last stretch is taller. The passage stays on the same easting as the gallery door, about 7.29 m east of the pyramid's centre. The drawing shows that passage meeting the north wall of the chamber.",
+      "links": [
+        {
+          "label": "Wikipedia: Queen's Chamber",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Queen's_Chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "queen-drawing",
+          "title": "Isometric drawing of the Queen's Chamber and its niche",
+          "file": "/sites/khufu/images/queen-drawing.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Chambre-reine-kheops.jpg/960px-Chambre-reine-kheops.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Chambre-reine-kheops.jpg",
+          "author": "Franck Monnier",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        },
+        {
+          "id": "junction-edgar",
+          "title": "Where the Grand Gallery branches, 1910",
+          "file": "/sites/khufu/images/junction-edgar.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/10_edgar.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:10_edgar.jpg",
+          "author": "John and Morton Edgar",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "section-monnier",
+          "title": "North–south section of the pyramid",
+          "file": "/sites/khufu/images/section-monnier.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Kheops-coupe.svg/960px-Kheops-coupe.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-coupe.svg",
+          "author": "Franck Monnier, vectorised from his drawing",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "queens-chamber",
+      "name": "Queen's Chamber",
+      "group": "Chambers",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "passage",
+      "description": "The Queen's Chamber sits on the pyramid's north–south centreline, with its floor about 834 inches above the pavement. Petrie measured it 205.85 inches from north wall to south wall and 226.47 inches from west wall to east wall. Many secondary accounts, including some Wikipedia summaries, swap those two axes. The mesh follows his wall table. The roof is a gable whose ridge is 245.1 inches above the unfinished floor and 0.3 inches north of the mid-plane. The east–west position drawn here assumes the passage meets the middle of the north wall. He did not publish an independent distance for that.",
+      "links": [
+        {
+          "label": "Wikipedia: Queen's Chamber",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Queen's_Chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        },
+        {
+          "label": "Lehner 1997",
+          "url": "https://archive.org/details/completepyramids0000lehn",
+          "sourceId": "lehner1997"
+        }
+      ],
+      "images": [
+        {
+          "id": "queen-drawing",
+          "title": "Isometric drawing of the Queen's Chamber and its niche",
+          "file": "/sites/khufu/images/queen-drawing.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Chambre-reine-kheops.jpg/960px-Chambre-reine-kheops.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Chambre-reine-kheops.jpg",
+          "author": "Franck Monnier",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        },
+        {
+          "id": "section-procureur",
+          "title": "East–west cut marking the chambers and the descending corridor",
+          "file": "/sites/khufu/images/section-procureur.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "page": "https://commons.wikimedia.org/wiki/File:East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "author": "Procureur, Morishima et al.",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+        },
+        {
+          "id": "section-monnier",
+          "title": "North–south section of the pyramid",
+          "file": "/sites/khufu/images/section-monnier.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Kheops-coupe.svg/960px-Kheops-coupe.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-coupe.svg",
+          "author": "Franck Monnier, vectorised from his drawing",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "queens-niche",
+      "name": "Niche in the Queen's Chamber",
+      "group": "Chambers",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "passage",
+      "description": "A corbelled niche is cut into the east wall of the Queen's Chamber, 41 inches deep. It narrows in four overlaps from about 62 inches at the floor to 20 inches at the top. Petrie put its centre about 25.2 inches off the chamber's midline. His lap table mixes north and south suffixes, so the direction of that shift should be checked against the plate. The mesh moves the niche south of centre. The isometric drawing shows the niche in the east wall. No separate photograph of the niche is on file under a licence this atlas can use.",
+      "links": [
+        {
+          "label": "Wikipedia: Queen's Chamber",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Queen's_Chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "queen-drawing",
+          "title": "Isometric drawing of the Queen's Chamber and its niche",
+          "file": "/sites/khufu/images/queen-drawing.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Chambre-reine-kheops.jpg/960px-Chambre-reine-kheops.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Chambre-reine-kheops.jpg",
+          "author": "Franck Monnier",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        },
+        {
+          "id": "section-monnier",
+          "title": "North–south section of the pyramid",
+          "file": "/sites/khufu/images/section-monnier.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Kheops-coupe.svg/960px-Kheops-coupe.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-coupe.svg",
+          "author": "Franck Monnier, vectorised from his drawing",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "queens-north-shaft",
+      "name": "Queen's Chamber north shaft",
+      "group": "Shafts",
+      "layer": "interior",
+      "accuracy": "projected",
+      "schematic": false,
+      "material": "shaft",
+      "description": "The north shaft leaves the Queen's Chamber horizontally for 76 inches, about 8 inches wide and 8.6 inches high, then turns upward at 37°28′. Petrie projected that slope to the casing and did not find an outer mouth. Later robots, Upuaut and the Djedi project, found a blocking stone and a bend that his straight line does not include. The shaft drawn here is his straight projection, from the mouth at the joint 67.44 inches above the floor out to the point where he said the floor would meet the north face. The diagram shows both Queen's shafts. The photograph is the King's Chamber shaft, a different channel of the same family.",
+      "links": [
+        {
+          "label": "Wikipedia: Queen's Chamber shafts",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Queen's_Chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "shaft-diagram",
+          "title": "Diagram of the shafts",
+          "file": "/sites/khufu/images/shaft-diagram.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Cheopspyramidens_schakt.jpg/960px-Cheopspyramidens_schakt.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cheopspyramidens_schakt.jpg",
+          "author": "Bairuilong",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "id": "queen-drawing",
+          "title": "Isometric drawing of the Queen's Chamber and its niche",
+          "file": "/sites/khufu/images/queen-drawing.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Chambre-reine-kheops.jpg/960px-Chambre-reine-kheops.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Chambre-reine-kheops.jpg",
+          "author": "Franck Monnier",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        },
+        {
+          "id": "shaft-didia",
+          "title": "Mouth of the northern shaft in the King's Chamber",
+          "file": "/sites/khufu/images/shaft-didia.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Cheops-Schacht-K%C3%B6nigskammer.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cheops-Schacht-K%C3%B6nigskammer.jpg",
+          "author": "Didia",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "queens-south-shaft",
+      "name": "Queen's Chamber south shaft",
+      "group": "Shafts",
+      "layer": "interior",
+      "accuracy": "projected",
+      "schematic": false,
+      "material": "shaft",
+      "description": "The south shaft is the pair of the north one. Petrie measured 80 inches of horizontal run, then a rise of 38°28′. He projected that line to the south face. The explored shaft stops at a blocking stone short of the casing, so the outer end drawn here is his projection, not a mouth that has been seen. Bends found by the robot surveys are not in the mesh. The diagram shows the published straight-line hypothesis for both Queen's shafts.",
+      "links": [
+        {
+          "label": "Wikipedia: Queen's Chamber shafts",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Queen's_Chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "shaft-diagram",
+          "title": "Diagram of the shafts",
+          "file": "/sites/khufu/images/shaft-diagram.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Cheopspyramidens_schakt.jpg/960px-Cheopspyramidens_schakt.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cheopspyramidens_schakt.jpg",
+          "author": "Bairuilong",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "id": "queen-drawing",
+          "title": "Isometric drawing of the Queen's Chamber and its niche",
+          "file": "/sites/khufu/images/queen-drawing.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Chambre-reine-kheops.jpg/960px-Chambre-reine-kheops.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Chambre-reine-kheops.jpg",
+          "author": "Franck Monnier",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        },
+        {
+          "id": "section-sn",
+          "title": "Schematic north–south section",
+          "file": "/sites/khufu/images/section-sn.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Great_Pyramid_S-N_Diagram.svg/960px-Great_Pyramid_S-N_Diagram.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Great_Pyramid_S-N_Diagram.svg",
+          "author": "Flanker",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "grand-gallery",
+      "name": "Grand Gallery",
+      "group": "Passages",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "passage",
+      "description": "The Grand Gallery is the corbelled hall that continues the Ascending Passage up toward the King's Chamber. Petrie measured it 82.5 inches (2.10 m) wide between the walls and about 41 inches (1.04 m) wide at the ceiling, with a vertical height of 339 inches, about 8.6 m, overlapping in seven laps. The floor drawn is his virtual floor, from the gallery door at 852.6 inches above the pavement to the south wall, 61.7 inches south of the centre. The ramp is drawn one cubit high because he did not publish a single ramp height, and the holes cut along the ramps are not modelled. Whether the gallery was a lifting ramp, a ceremonial approach, or both is not settled by the measurements.",
+      "links": [
+        {
+          "label": "Wikipedia: Grand Gallery",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Grand_Gallery"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        },
+        {
+          "label": "Lehner 1997",
+          "url": "https://archive.org/details/completepyramids0000lehn",
+          "sourceId": "lehner1997"
+        }
+      ],
+      "images": [
+        {
+          "id": "gallery-adler",
+          "title": "Looking up the Grand Gallery",
+          "file": "/sites/khufu/images/gallery-adler.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Great_Pyramid_of_Giza_Grand_Gallery.jpg/960px-Great_Pyramid_of_Giza_Grand_Gallery.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Great_Pyramid_of_Giza_Grand_Gallery.jpg",
+          "author": "Keith Adler",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "id": "gallery-mcbey",
+          "title": "Looking up the Grand Gallery, 1984",
+          "file": "/sites/khufu/images/gallery-mcbey.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Looking_upwards%2C_along_the_Grand_Gallery%2C_inside_the_Great_Pyramid_1984_%2850535456558%29.jpg/960px-Looking_upwards%2C_along_the_Grand_Gallery%2C_inside_the_Great_Pyramid_1984_%2850535456558%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Looking_upwards,_along_the_Grand_Gallery,_inside_the_Great_Pyramid_1984_(50535456558).jpg",
+          "author": "Mike McBey",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "id": "gallery-description",
+          "title": "The Grand Gallery in the Description de l'Égypte",
+          "file": "/sites/khufu/images/gallery-description.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Grande-galerie-description-egypte.jpg/960px-Grande-galerie-description-egypte.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Grande-galerie-description-egypte.jpg",
+          "author": "Description de l'Égypte",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "gallery-psm",
+          "title": "Longitudinal section of the Grand Gallery, 1912",
+          "file": "/sites/khufu/images/gallery-psm.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png/960px-PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png",
+          "page": "https://commons.wikimedia.org/wiki/File:PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png",
+          "author": "Popular Science Monthly, volume 80 (1912)",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-US"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "antechamber",
+      "name": "Antechamber",
+      "group": "Chambers",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "granite",
+      "description": "A granite room stands between the Grand Gallery and the King's Chamber. Petrie measured it 116.3 inches long, 65.0 inches wide and 149.35 inches high. Slots in the walls once held portcullis slabs. The leaf that remains is a raised pair of stones, not a door that still slides. Its north end is 113.7 inches south of the pyramid's centre and its south end 229.8 inches south. The isometric drawing shows the antechamber in front of the King's Chamber. The sarcophagus beyond it is not in the mesh.",
+      "links": [
+        {
+          "label": "Wikipedia: King's Chamber",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#King's_Chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "king-drawing",
+          "title": "Isometric drawing of the King's Chamber and Antechamber",
+          "file": "/sites/khufu/images/king-drawing.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Kheops-chambre-roi.jpg/960px-Kheops-chambre-roi.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-chambre-roi.jpg",
+          "author": "Franck Monnier",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        },
+        {
+          "id": "king-currie",
+          "title": "Inside the King's Chamber",
+          "file": "/sites/khufu/images/king-currie.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Khufu_Pyramid_-_King%27s_Chamber.jpg/960px-Khufu_Pyramid_-_King%27s_Chamber.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Khufu_Pyramid_-_King%27s_Chamber.jpg",
+          "author": "Andrew Currie",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "id": "section-monnier",
+          "title": "North–south section of the pyramid",
+          "file": "/sites/khufu/images/section-monnier.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Kheops-coupe.svg/960px-Kheops-coupe.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-coupe.svg",
+          "author": "Franck Monnier, vectorised from his drawing",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "kings-north-passage",
+      "name": "Passage into the Antechamber",
+      "group": "Passages",
+      "layer": "interior",
+      "accuracy": "reconstructed",
+      "schematic": false,
+      "material": "passage",
+      "description": "A short low passage runs from the south wall of the Grand Gallery into the Antechamber. The length is Petrie's: 52 inches from that wall to the north end of the Antechamber. The height is reconstructed at 41.2 inches, the same section used for the low passage south of the Antechamber, because he did not publish a single height for this crawl. The floor is at the Antechamber floor. The drawing shows the passage in front of the portcullis room.",
+      "links": [
+        {
+          "label": "Wikipedia: approach to the King's Chamber",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#King's_Chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "king-drawing",
+          "title": "Isometric drawing of the King's Chamber and Antechamber",
+          "file": "/sites/khufu/images/king-drawing.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Kheops-chambre-roi.jpg/960px-Kheops-chambre-roi.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-chambre-roi.jpg",
+          "author": "Franck Monnier",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        },
+        {
+          "id": "gallery-psm",
+          "title": "Longitudinal section of the Grand Gallery, 1912",
+          "file": "/sites/khufu/images/gallery-psm.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png/960px-PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png",
+          "page": "https://commons.wikimedia.org/wiki/File:PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png",
+          "author": "Popular Science Monthly, volume 80 (1912)",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-US"
+        },
+        {
+          "id": "section-monnier",
+          "title": "North–south section of the pyramid",
+          "file": "/sites/khufu/images/section-monnier.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Kheops-coupe.svg/960px-Kheops-coupe.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-coupe.svg",
+          "author": "Franck Monnier, vectorised from his drawing",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "kings-south-passage",
+      "name": "Passage into the King's Chamber",
+      "group": "Passages",
+      "layer": "interior",
+      "accuracy": "reconstructed",
+      "schematic": false,
+      "material": "granite",
+      "description": "The last crawl runs from the Antechamber into the King's Chamber. Petrie's floor distances give it 100.8 inches of length. The height is reconstructed at the same 41.2 inch section as the passage north of the Antechamber. The walls are granite, like the chamber they open into. Visitors cross this passage on their hands and knees. The photograph shows the chamber beyond it, not the crawl itself.",
+      "links": [
+        {
+          "label": "Wikipedia: King's Chamber",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#King's_Chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "king-drawing",
+          "title": "Isometric drawing of the King's Chamber and Antechamber",
+          "file": "/sites/khufu/images/king-drawing.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Kheops-chambre-roi.jpg/960px-Kheops-chambre-roi.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-chambre-roi.jpg",
+          "author": "Franck Monnier",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        },
+        {
+          "id": "king-currie",
+          "title": "Inside the King's Chamber",
+          "file": "/sites/khufu/images/king-currie.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Khufu_Pyramid_-_King%27s_Chamber.jpg/960px-Khufu_Pyramid_-_King%27s_Chamber.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Khufu_Pyramid_-_King%27s_Chamber.jpg",
+          "author": "Andrew Currie",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "id": "king-mcbey",
+          "title": "The King's Chamber and sarcophagus",
+          "file": "/sites/khufu/images/king-mcbey.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/At_the_centre_of_the_Great_Pyramid_%2838515178320%29.jpg/960px-At_the_centre_of_the_Great_Pyramid_%2838515178320%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:At_the_centre_of_the_Great_Pyramid_(38515178320).jpg",
+          "author": "Mike McBey",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "kings-chamber",
+      "name": "King's Chamber",
+      "group": "Chambers",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "granite",
+      "description": "The King's Chamber is a granite room about 10.48 m east–west and 5.24 m north–south. Petrie put the north wall 330.6 inches south of the centre and the south wall 537.0 inches south, the east wall 305.1 inches east of centre and the west wall 107.7 inches west. The floor runs from 1,691.4 to 1,693.7 inches and the ceiling from 1,921.6 to 1,923.7 inches. The mesh uses the mean of each pair. The walls have opened slightly along the joints, and he corrected the original lengths by a few tenths of an inch. The sarcophagus is still in the room and is not drawn. Five relieving chambers sit on the ceiling.",
+      "links": [
+        {
+          "label": "Wikipedia: King's Chamber",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#King's_Chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        },
+        {
+          "label": "Vyse and Perring 1840",
+          "url": "https://archive.org/details/operationscarrie01vyse",
+          "sourceId": "vyse1840"
+        }
+      ],
+      "images": [
+        {
+          "id": "king-currie",
+          "title": "Inside the King's Chamber",
+          "file": "/sites/khufu/images/king-currie.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Khufu_Pyramid_-_King%27s_Chamber.jpg/960px-Khufu_Pyramid_-_King%27s_Chamber.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Khufu_Pyramid_-_King%27s_Chamber.jpg",
+          "author": "Andrew Currie",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "id": "king-mcbey",
+          "title": "The King's Chamber and sarcophagus",
+          "file": "/sites/khufu/images/king-mcbey.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/At_the_centre_of_the_Great_Pyramid_%2838515178320%29.jpg/960px-At_the_centre_of_the_Great_Pyramid_%2838515178320%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:At_the_centre_of_the_Great_Pyramid_(38515178320).jpg",
+          "author": "Mike McBey",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "id": "king-drawing",
+          "title": "Isometric drawing of the King's Chamber and Antechamber",
+          "file": "/sites/khufu/images/king-drawing.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Kheops-chambre-roi.jpg/960px-Kheops-chambre-roi.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-chambre-roi.jpg",
+          "author": "Franck Monnier",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "kings-north-shaft",
+      "name": "King's Chamber north shaft",
+      "group": "Shafts",
+      "layer": "interior",
+      "accuracy": "projected",
+      "schematic": false,
+      "material": "shaft",
+      "description": "A shaft leaves the north wall of the King's Chamber and reaches the casing. Petrie measured the portions he could see from the outside and found they average 31°33′. He thought the whole shaft was probably not steeper than 31°. The mesh draws a straight ray at that outer angle. The mouth height inside the chamber, 0.91 m above the floor, is reconstructed. The section is about 9 inches by 8. The photographs show that mouth in the north wall. The channel is not perfectly straight, but the bend is smaller than on the south shaft.",
+      "links": [
+        {
+          "label": "Wikipedia: King's Chamber shafts",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#King's_Chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "shaft-mouth",
+          "title": "The northern air shaft opening in the King's Chamber",
+          "file": "/sites/khufu/images/shaft-mouth.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Great_Pyramid_Air_Shaft_%2839752498153%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Great_Pyramid_Air_Shaft_(39752498153).jpg",
+          "author": "Vincent Brown",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "id": "shaft-didia",
+          "title": "Mouth of the northern shaft in the King's Chamber",
+          "file": "/sites/khufu/images/shaft-didia.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Cheops-Schacht-K%C3%B6nigskammer.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cheops-Schacht-K%C3%B6nigskammer.jpg",
+          "author": "Didia",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "id": "shaft-diagram",
+          "title": "Diagram of the shafts",
+          "file": "/sites/khufu/images/shaft-diagram.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Cheopspyramidens_schakt.jpg/960px-Cheopspyramidens_schakt.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cheopspyramidens_schakt.jpg",
+          "author": "Bairuilong",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "kings-south-shaft",
+      "name": "King's Chamber south shaft",
+      "group": "Shafts",
+      "layer": "interior",
+      "accuracy": "projected",
+      "schematic": false,
+      "material": "shaft",
+      "description": "The southern shaft's measured portions average 45°13′40″ and steepen toward the outside. It is drawn straight at that mean angle, from a reconstructed mouth 0.91 m above the floor out to the casing. Petrie saw the real channel curve by more than its own width, so a straight ray is a simplification. The section is the same order as the north shaft. The photograph is the northern mouth, the one visitors can see in the chamber. The diagram shows both shafts.",
+      "links": [
+        {
+          "label": "Wikipedia: King's Chamber shafts",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#King's_Chamber"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "shaft-diagram",
+          "title": "Diagram of the shafts",
+          "file": "/sites/khufu/images/shaft-diagram.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Cheopspyramidens_schakt.jpg/960px-Cheopspyramidens_schakt.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cheopspyramidens_schakt.jpg",
+          "author": "Bairuilong",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "id": "shaft-didia",
+          "title": "Mouth of the northern shaft in the King's Chamber",
+          "file": "/sites/khufu/images/shaft-didia.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Cheops-Schacht-K%C3%B6nigskammer.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Cheops-Schacht-K%C3%B6nigskammer.jpg",
+          "author": "Didia",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "id": "king-drawing",
+          "title": "Isometric drawing of the King's Chamber and Antechamber",
+          "file": "/sites/khufu/images/king-drawing.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Kheops-chambre-roi.jpg/960px-Kheops-chambre-roi.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-chambre-roi.jpg",
+          "author": "Franck Monnier",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "davison",
+      "name": "Davison's Chamber",
+      "group": "Chambers",
+      "layer": "interior",
+      "accuracy": "schematic",
+      "schematic": true,
+      "material": "granite",
+      "description": "Davison's Chamber is the lowest of the five relieving spaces above the King's Chamber ceiling, named for Nathaniel Davison, who reached it in 1765. Petrie, quoting Vyse, puts the apex of the whole stack near 2,525 inches above the pavement. The five voids in the mesh share the King's Chamber plan and split the height under that apex evenly, with four 0.8 m beams between them. Those individual heights are not Vyse's measured heights. The plates show the real stack, which is less regular than the boxes drawn here.",
+      "links": [
+        {
+          "label": "Wikipedia: relieving chambers",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#King's_Chamber"
+        },
+        {
+          "label": "Vyse and Perring 1840",
+          "url": "https://archive.org/details/operationscarrie01vyse",
+          "sourceId": "vyse1840"
+        },
+        {
+          "label": "Petrie 1883",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "vyse-01",
+          "title": "Vyse and Perring's plate of the chambers of construction",
+          "file": "/sites/khufu/images/vyse-01.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Vyse-perring-01.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Vyse-perring-01.jpg",
+          "author": "Richard William Howard Vyse and John Shae Perring",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "vyse-02",
+          "title": "Vyse and Perring's section through the relieving chambers",
+          "file": "/sites/khufu/images/vyse-02.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Vyse-perring-02.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Vyse-perring-02.jpg",
+          "author": "Richard William Howard Vyse and John Shae Perring",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "rafters",
+          "title": "Under the gable that closes the relieving chambers",
+          "file": "/sites/khufu/images/rafters.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg/960px-Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg",
+          "author": "Jean-Pierre Houdin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "wellington",
+      "name": "Wellington's Chamber",
+      "group": "Chambers",
+      "layer": "interior",
+      "accuracy": "schematic",
+      "schematic": true,
+      "material": "granite",
+      "description": "Wellington's Chamber is the second relieving space, named by Vyse when he forced his way up from Davison's Chamber in 1837. Like the others, it is drawn on the King's Chamber plan. Its floor is one equal step above Davison's ceiling, using a spacer of 0.8 m that is not a measured beam thickness. Vyse and Perring's plate is the survey of these rooms. The mesh only guarantees the count of five spaces and the apex Petrie quotes at 2,525 inches.",
+      "links": [
+        {
+          "label": "Wikipedia: relieving chambers",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#King's_Chamber"
+        },
+        {
+          "label": "Vyse and Perring 1840",
+          "url": "https://archive.org/details/operationscarrie01vyse",
+          "sourceId": "vyse1840"
+        },
+        {
+          "label": "Petrie 1883",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "vyse-02",
+          "title": "Vyse and Perring's section through the relieving chambers",
+          "file": "/sites/khufu/images/vyse-02.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Vyse-perring-02.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Vyse-perring-02.jpg",
+          "author": "Richard William Howard Vyse and John Shae Perring",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "vyse-01",
+          "title": "Vyse and Perring's plate of the chambers of construction",
+          "file": "/sites/khufu/images/vyse-01.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Vyse-perring-01.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Vyse-perring-01.jpg",
+          "author": "Richard William Howard Vyse and John Shae Perring",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "rafters",
+          "title": "Under the gable that closes the relieving chambers",
+          "file": "/sites/khufu/images/rafters.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg/960px-Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg",
+          "author": "Jean-Pierre Houdin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "nelson",
+      "name": "Nelson's Chamber",
+      "group": "Chambers",
+      "layer": "interior",
+      "accuracy": "schematic",
+      "schematic": true,
+      "material": "granite",
+      "description": "Nelson's Chamber is the middle of the five compartments of construction over the King's Chamber. Vyse named it in 1837. The granite beams that form its floor are the ceiling of Wellington's Chamber below. In the mesh the five voids and four spacers share the distance from the King's ceiling up to the apex at 2,525 inches, so this room's height is an even share, not Vyse's own measurement. The plates show the quarry marks he found on the walls.",
+      "links": [
+        {
+          "label": "Wikipedia: relieving chambers",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#King's_Chamber"
+        },
+        {
+          "label": "Vyse and Perring 1840",
+          "url": "https://archive.org/details/operationscarrie01vyse",
+          "sourceId": "vyse1840"
+        },
+        {
+          "label": "Petrie 1883",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "vyse-01",
+          "title": "Vyse and Perring's plate of the chambers of construction",
+          "file": "/sites/khufu/images/vyse-01.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Vyse-perring-01.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Vyse-perring-01.jpg",
+          "author": "Richard William Howard Vyse and John Shae Perring",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "vyse-02",
+          "title": "Vyse and Perring's section through the relieving chambers",
+          "file": "/sites/khufu/images/vyse-02.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Vyse-perring-02.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Vyse-perring-02.jpg",
+          "author": "Richard William Howard Vyse and John Shae Perring",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "arbuthnot",
+      "name": "Lady Arbuthnot's Chamber",
+      "group": "Chambers",
+      "layer": "interior",
+      "accuracy": "schematic",
+      "schematic": true,
+      "material": "granite",
+      "description": "Lady Arbuthnot's Chamber is the fourth relieving space, named for the wife of a British official who was at Giza when Vyse opened it. It sits on the same plan as the King's Chamber. The height drawn is one fifth of the space under the apex after the spacers are taken out, which is a modelling choice. Vyse and Perring published the section this plate records. Petrie accepted their apex, near 2,525 inches above the pavement, and that is the height the stack is built to.",
+      "links": [
+        {
+          "label": "Wikipedia: relieving chambers",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#King's_Chamber"
+        },
+        {
+          "label": "Vyse and Perring 1840",
+          "url": "https://archive.org/details/operationscarrie01vyse",
+          "sourceId": "vyse1840"
+        },
+        {
+          "label": "Petrie 1883",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "vyse-02",
+          "title": "Vyse and Perring's section through the relieving chambers",
+          "file": "/sites/khufu/images/vyse-02.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Vyse-perring-02.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Vyse-perring-02.jpg",
+          "author": "Richard William Howard Vyse and John Shae Perring",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "vyse-01",
+          "title": "Vyse and Perring's plate of the chambers of construction",
+          "file": "/sites/khufu/images/vyse-01.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Vyse-perring-01.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Vyse-perring-01.jpg",
+          "author": "Richard William Howard Vyse and John Shae Perring",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "rafters",
+          "title": "Under the gable that closes the relieving chambers",
+          "file": "/sites/khufu/images/rafters.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg/960px-Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg",
+          "author": "Jean-Pierre Houdin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "campbell",
+      "name": "Campbell's Chamber",
+      "group": "Chambers",
+      "layer": "interior",
+      "accuracy": "schematic",
+      "schematic": true,
+      "material": "granite",
+      "description": "Campbell's Chamber is the top of the stack, closed by a limestone gable whose ridge Petrie, quoting Vyse, placed near 2,525 inches above the pavement. The mesh puts that ridge on the apex and gives the room a gable rather than a flat ceiling. The four chambers below are flat-topped boxes. The photograph is taken under those rafters. As with the rest of the stack, the individual height is an even split, not Vyse's measured height, and the plan is copied from the King's Chamber.",
+      "links": [
+        {
+          "label": "Wikipedia: relieving chambers",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#King's_Chamber"
+        },
+        {
+          "label": "Vyse and Perring 1840",
+          "url": "https://archive.org/details/operationscarrie01vyse",
+          "sourceId": "vyse1840"
+        },
+        {
+          "label": "Petrie 1883",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "rafters",
+          "title": "Under the gable that closes the relieving chambers",
+          "file": "/sites/khufu/images/rafters.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg/960px-Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Jean-Pierre_Houdin_sous_les_chevrons_de_Kh%C3%A9ops.jpg",
+          "author": "Jean-Pierre Houdin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "id": "vyse-01",
+          "title": "Vyse and Perring's plate of the chambers of construction",
+          "file": "/sites/khufu/images/vyse-01.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Vyse-perring-01.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Vyse-perring-01.jpg",
+          "author": "Richard William Howard Vyse and John Shae Perring",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "vyse-02",
+          "title": "Vyse and Perring's section through the relieving chambers",
+          "file": "/sites/khufu/images/vyse-02.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Vyse-perring-02.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Vyse-perring-02.jpg",
+          "author": "Richard William Howard Vyse and John Shae Perring",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "well-shaft",
+      "name": "Well shaft",
+      "group": "Passages",
+      "layer": "interior",
+      "accuracy": "schematic",
+      "schematic": true,
+      "material": "bedrock",
+      "description": "An irregular shaft drops from the west side of the Grand Gallery floor down to the lower part of the descending passage. Petrie fixed only the mouth: 35.4 inches south of the gallery's north wall. It was the way out for the workers who released the granite plugs. The path drawn here — a drop to a grotto near pavement level, then down to the descending passage — follows the published topology and is marked schematic. The grotto and the bends are not a stone-by-stone survey. The 1910 plate shows the grotto. The 1912 section shows the shaft beside the gallery.",
+      "links": [
+        {
+          "label": "Wikipedia: well shaft",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Interior"
+        },
+        {
+          "label": "Petrie 1883, chapter 7",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/c7.html",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "grotto-edgar",
+          "title": "The grotto on the well shaft, 1910",
+          "file": "/sites/khufu/images/grotto-edgar.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/38_edgar.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:38_edgar.jpg",
+          "author": "John and Morton Edgar",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old"
+        },
+        {
+          "id": "gallery-psm",
+          "title": "Longitudinal section of the Grand Gallery, 1912",
+          "file": "/sites/khufu/images/gallery-psm.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png/960px-PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png",
+          "page": "https://commons.wikimedia.org/wiki/File:PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png",
+          "author": "Popular Science Monthly, volume 80 (1912)",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-US"
+        },
+        {
+          "id": "section-monnier",
+          "title": "North–south section of the pyramid",
+          "file": "/sites/khufu/images/section-monnier.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Kheops-coupe.svg/960px-Kheops-coupe.svg.png",
+          "page": "https://commons.wikimedia.org/wiki/File:Kheops-coupe.svg",
+          "author": "Franck Monnier, vectorised from his drawing",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "mamun-tunnel",
+      "name": "Al-Ma'mun's tunnel",
+      "group": "Intrusions",
+      "layer": "interior",
+      "accuracy": "schematic",
+      "schematic": true,
+      "material": "forced",
+      "description": "This is the passage visitors use. Tradition credits the Abbasid caliph al-Ma'mun, around 820, with forcing it. Some scholars think he cleared an older robbers' tunnel. It enters low on the north face, well below the original doorway, and joins the pyramid's own passages at the granite plugs. Both the sill height and the cross-section drawn here are schematic. They are large enough to show the route, and they are not a surveyed profile. The photographs show the opening in the north face and the passage that runs in to meet the original corridor.",
+      "links": [
+        {
+          "label": "Wikipedia: entrance",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Interior"
+        },
+        {
+          "label": "Petrie 1883",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/index.htm",
+          "sourceId": "petrie1883"
+        },
+        {
+          "label": "Lehner 1997",
+          "url": "https://archive.org/details/completepyramids0000lehn",
+          "sourceId": "lehner1997"
+        }
+      ],
+      "images": [
+        {
+          "id": "entrance-tourist",
+          "title": "The forced entrance, which joins the original passage",
+          "file": "/sites/khufu/images/entrance-tourist.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Egypt-12B-067_%282217510728%29.jpg/960px-Egypt-12B-067_%282217510728%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Egypt-12B-067_(2217510728).jpg",
+          "author": "Dennis G. Jarvis",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+        },
+        {
+          "id": "entrance-tausch",
+          "title": "The entrance in the north face",
+          "file": "/sites/khufu/images/entrance-tausch.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Giseh_51.jpg/960px-Giseh_51.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Giseh_51.jpg",
+          "author": "Olaf Tausch",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+        },
+        {
+          "id": "entrance-both",
+          "title": "The original doorway and the later opening",
+          "file": "/sites/khufu/images/entrance-both.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Giza_Great_Pyramid_of_Khufu_Old_%26_New_Entrances_%289793895923%29.jpg/960px-Giza_Great_Pyramid_of_Khufu_Old_%26_New_Entrances_%289793895923%29.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Giza_Great_Pyramid_of_Khufu_Old_%26_New_Entrances_(9793895923).jpg",
+          "author": "Gary Todd",
+          "license": "CC0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "north-face-chevron",
+      "name": "North-face chevron",
+      "group": "Exterior",
+      "layer": "interior",
+      "accuracy": "schematic",
+      "schematic": true,
+      "material": "chevron",
+      "description": "A gable of large limestone blocks stands over the original entrance. It is exposed now because the casing that once covered it is gone. The North Face Corridor sits just behind it. The thickness drawn matches the 0.84 m of stone the muon survey found in front of that corridor. The span and the rise of the chevron are schematic. The photographs show the gable in the north face, above the opening tourists use. The 2023 figure shows the same chevron with the corridor behind it.",
+      "links": [
+        {
+          "label": "Wikipedia: entrance",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Interior"
+        },
+        {
+          "label": "Procureur et al. 2023",
+          "url": "https://doi.org/10.1038/s41467-023-36351-0",
+          "sourceId": "scanpyramids2023"
+        },
+        {
+          "label": "Petrie 1883",
+          "url": "https://www.ronaldbirdsall.com/gizeh/petrie/index.htm",
+          "sourceId": "petrie1883"
+        }
+      ],
+      "images": [
+        {
+          "id": "entrance-original",
+          "title": "The original entrance above the opening used today",
+          "file": "/sites/khufu/images/entrance-original.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Flickr_-_archer10_%28Dennis%29_-_Egypt-12B-071.jpg/960px-Flickr_-_archer10_%28Dennis%29_-_Egypt-12B-071.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Flickr_-_archer10_(Dennis)_-_Egypt-12B-071.jpg",
+          "author": "Dennis G. Jarvis",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+        },
+        {
+          "id": "entrance-tausch",
+          "title": "The entrance in the north face",
+          "file": "/sites/khufu/images/entrance-tausch.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Giseh_51.jpg/960px-Giseh_51.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Giseh_51.jpg",
+          "author": "Olaf Tausch",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+        },
+        {
+          "id": "nfc-scan",
+          "title": "Muography of the North Face Corridor behind the chevron",
+          "file": "/sites/khufu/images/nfc-scan.webp",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/North_Face_Corridor%2C_Great_Pyramid%2C_muography.webp/960px-North_Face_Corridor%2C_Great_Pyramid%2C_muography.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:North_Face_Corridor,_Great_Pyramid,_muography.webp",
+          "author": "Procureur, Morishima et al.",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "north-face-corridor",
+      "name": "North Face Corridor",
+      "group": "Voids",
+      "layer": "interior",
+      "accuracy": "surveyed",
+      "schematic": false,
+      "material": "void",
+      "description": "The North Face Corridor is a void behind the entrance chevron, measured by cosmic-ray muons and published in 2023. Procureur, Morishima and colleagues give it as 9.06 ± 0.07 m long, 2.02 ± 0.06 m wide and 2.18 ± 0.17 m high, horizontal, centred on the chevron and on the descending passage. Its floor is about 20 m above the ground. The paper measures 0.84 m of stone from the chevron's outer face. The mesh places the void 0.84 m behind the lost casing plane at ceiling height, so a vertical box does not poke through the sloping face. That is a placement compromise of about 1–2 m. The corridor has not been entered. The image is the muography, not a photograph of the inside.",
+      "links": [
+        {
+          "label": "Wikipedia: North Face Corridor",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Interior"
+        },
+        {
+          "label": "Procureur et al. 2023",
+          "url": "https://doi.org/10.1038/s41467-023-36351-0",
+          "sourceId": "scanpyramids2023"
+        }
+      ],
+      "images": [
+        {
+          "id": "nfc-scan",
+          "title": "Muography of the North Face Corridor behind the chevron",
+          "file": "/sites/khufu/images/nfc-scan.webp",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/North_Face_Corridor%2C_Great_Pyramid%2C_muography.webp/960px-North_Face_Corridor%2C_Great_Pyramid%2C_muography.webp",
+          "page": "https://commons.wikimedia.org/wiki/File:North_Face_Corridor,_Great_Pyramid,_muography.webp",
+          "author": "Procureur, Morishima et al.",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+        },
+        {
+          "id": "section-procureur",
+          "title": "East–west cut marking the chambers and the descending corridor",
+          "file": "/sites/khufu/images/section-procureur.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "page": "https://commons.wikimedia.org/wiki/File:East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "author": "Procureur, Morishima et al.",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+        },
+        {
+          "id": "entrance-original",
+          "title": "The original entrance above the opening used today",
+          "file": "/sites/khufu/images/entrance-original.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Flickr_-_archer10_%28Dennis%29_-_Egypt-12B-071.jpg/960px-Flickr_-_archer10_%28Dennis%29_-_Egypt-12B-071.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Flickr_-_archer10_(Dennis)_-_Egypt-12B-071.jpg",
+          "author": "Dennis G. Jarvis",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    },
+    {
+      "id": "big-void",
+      "name": "ScanPyramids Big Void",
+      "group": "Voids",
+      "layer": "interior",
+      "accuracy": "reconstructed",
+      "schematic": true,
+      "material": "void",
+      "description": "The Big Void is a space ScanPyramids reported in Nature in 2017 from cosmic-ray muons. It is at least 30 m long, with a cross-section similar to the Grand Gallery, and it lies above that gallery, 40–50 m from the detectors in the Queen's Chamber. The paper does not publish a centreline, and it allows both a horizontal void and an inclined one, or several adjacent spaces. This model draws only the horizontal hypothesis: 30 m, the gallery's cross-section, centred 20 m north of the pyramid's centre so that the middle of the void is 45 m from the Queen's Chamber. The inclined hypothesis is not drawn. The phrase \"21 m above the ground\" in the 2017 paper is the detector in the Queen's Chamber, not the void. No photograph of the void exists. The pictures show the gallery beneath it and the section on which the hypothesis is hung.",
+      "links": [
+        {
+          "label": "Wikipedia: Big Void",
+          "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza#Interior"
+        },
+        {
+          "label": "Morishima, Tayoubi et al. 2017",
+          "url": "https://doi.org/10.1038/nature24647",
+          "sourceId": "scanpyramids2017"
+        },
+        {
+          "label": "Procureur et al. 2023",
+          "url": "https://doi.org/10.1038/s41467-023-36351-0",
+          "sourceId": "scanpyramids2023"
+        }
+      ],
+      "images": [
+        {
+          "id": "section-procureur",
+          "title": "East–west cut marking the chambers and the descending corridor",
+          "file": "/sites/khufu/images/section-procureur.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "page": "https://commons.wikimedia.org/wiki/File:East-West_cut_view_of_the_Great_Pyramid_and_front_view_of_the_North_face_Chevron_area.png",
+          "author": "Procureur, Morishima et al.",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+        },
+        {
+          "id": "gallery-psm",
+          "title": "Longitudinal section of the Grand Gallery, 1912",
+          "file": "/sites/khufu/images/gallery-psm.png",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png/960px-PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png",
+          "page": "https://commons.wikimedia.org/wiki/File:PSM_V80_D462_Longitudinal_sections_of_the_grand_gallery.png",
+          "author": "Popular Science Monthly, volume 80 (1912)",
+          "license": "Public domain",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-US"
+        },
+        {
+          "id": "gallery-adler",
+          "title": "Looking up the Grand Gallery",
+          "file": "/sites/khufu/images/gallery-adler.jpg",
+          "wikimediaUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Great_Pyramid_of_Giza_Grand_Gallery.jpg/960px-Great_Pyramid_of_Giza_Grand_Gallery.jpg",
+          "page": "https://commons.wikimedia.org/wiki/File:Great_Pyramid_of_Giza_Grand_Gallery.jpg",
+          "author": "Keith Adler",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ],
+      "geometry": {
+        "providedBy": "builder"
+      }
+    }
+  ]
+}

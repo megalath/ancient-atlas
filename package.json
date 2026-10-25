@@ -5,11 +5,15 @@
   "license": "MIT",
   "description": "Open-source 3D atlas of the ancient world. Version 1 reconstructs the Great Pyramid of Khufu.",
   "scripts": {
+    "predev": "node scripts/generate-registry.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/generate-registry.mjs",
     "build": "next build",
     "start": "next start",
     "test": "vitest run",
-    "validate": "vitest run"
+    "validate": "node scripts/generate-registry.mjs && node scripts/validate-sites.mjs",
+    "new-site": "node scripts/new-site.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.6",
@@ -20,10 +24,12 @@
     "three": "^0.180.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.1",
     "@types/node": "^22.19.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@types/three": "^0.180.0",
+    "ajv": "^8.20.0",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   }
